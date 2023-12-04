@@ -1,0 +1,586 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		27EE90522B1E3E25001053A0 /* Advent2023App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27EE90512B1E3E25001053A0 /* Advent2023App.swift */; };
+		27EE90542B1E3E25001053A0 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27EE90532B1E3E25001053A0 /* ContentView.swift */; };
+		27EE90562B1E3E26001053A0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 27EE90552B1E3E26001053A0 /* Assets.xcassets */; };
+		27EE90592B1E3E26001053A0 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 27EE90582B1E3E26001053A0 /* Preview Assets.xcassets */; };
+		27EE90642B1E3E26001053A0 /* Advent2023Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27EE90632B1E3E26001053A0 /* Advent2023Tests.swift */; };
+		27EE906E2B1E3E26001053A0 /* Advent2023UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27EE906D2B1E3E26001053A0 /* Advent2023UITests.swift */; };
+		27EE90702B1E3E26001053A0 /* Advent2023UITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27EE906F2B1E3E26001053A0 /* Advent2023UITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		27EE90602B1E3E26001053A0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 27EE90462B1E3E25001053A0 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 27EE904D2B1E3E25001053A0;
+			remoteInfo = Advent2023;
+		};
+		27EE906A2B1E3E26001053A0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 27EE90462B1E3E25001053A0 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 27EE904D2B1E3E25001053A0;
+			remoteInfo = Advent2023;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		27EE904E2B1E3E25001053A0 /* Advent2023.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Advent2023.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		27EE90512B1E3E25001053A0 /* Advent2023App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Advent2023App.swift; sourceTree = "<group>"; };
+		27EE90532B1E3E25001053A0 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		27EE90552B1E3E26001053A0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		27EE90582B1E3E26001053A0 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		27EE905A2B1E3E26001053A0 /* Advent2023.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Advent2023.entitlements; sourceTree = "<group>"; };
+		27EE905F2B1E3E26001053A0 /* Advent2023Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Advent2023Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		27EE90632B1E3E26001053A0 /* Advent2023Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Advent2023Tests.swift; sourceTree = "<group>"; };
+		27EE90692B1E3E26001053A0 /* Advent2023UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Advent2023UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		27EE906D2B1E3E26001053A0 /* Advent2023UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Advent2023UITests.swift; sourceTree = "<group>"; };
+		27EE906F2B1E3E26001053A0 /* Advent2023UITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Advent2023UITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		27EE904B2B1E3E25001053A0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		27EE905C2B1E3E26001053A0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		27EE90662B1E3E26001053A0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		27EE90452B1E3E25001053A0 = {
+			isa = PBXGroup;
+			children = (
+				27EE90502B1E3E25001053A0 /* Advent2023 */,
+				27EE90622B1E3E26001053A0 /* Advent2023Tests */,
+				27EE906C2B1E3E26001053A0 /* Advent2023UITests */,
+				27EE904F2B1E3E25001053A0 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		27EE904F2B1E3E25001053A0 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				27EE904E2B1E3E25001053A0 /* Advent2023.app */,
+				27EE905F2B1E3E26001053A0 /* Advent2023Tests.xctest */,
+				27EE90692B1E3E26001053A0 /* Advent2023UITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		27EE90502B1E3E25001053A0 /* Advent2023 */ = {
+			isa = PBXGroup;
+			children = (
+				27EE90512B1E3E25001053A0 /* Advent2023App.swift */,
+				27EE90532B1E3E25001053A0 /* ContentView.swift */,
+				27EE90552B1E3E26001053A0 /* Assets.xcassets */,
+				27EE905A2B1E3E26001053A0 /* Advent2023.entitlements */,
+				27EE90572B1E3E26001053A0 /* Preview Content */,
+			);
+			path = Advent2023;
+			sourceTree = "<group>";
+		};
+		27EE90572B1E3E26001053A0 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				27EE90582B1E3E26001053A0 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		27EE90622B1E3E26001053A0 /* Advent2023Tests */ = {
+			isa = PBXGroup;
+			children = (
+				27EE90632B1E3E26001053A0 /* Advent2023Tests.swift */,
+			);
+			path = Advent2023Tests;
+			sourceTree = "<group>";
+		};
+		27EE906C2B1E3E26001053A0 /* Advent2023UITests */ = {
+			isa = PBXGroup;
+			children = (
+				27EE906D2B1E3E26001053A0 /* Advent2023UITests.swift */,
+				27EE906F2B1E3E26001053A0 /* Advent2023UITestsLaunchTests.swift */,
+			);
+			path = Advent2023UITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		27EE904D2B1E3E25001053A0 /* Advent2023 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 27EE90732B1E3E26001053A0 /* Build configuration list for PBXNativeTarget "Advent2023" */;
+			buildPhases = (
+				27EE904A2B1E3E25001053A0 /* Sources */,
+				27EE904B2B1E3E25001053A0 /* Frameworks */,
+				27EE904C2B1E3E25001053A0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Advent2023;
+			productName = Advent2023;
+			productReference = 27EE904E2B1E3E25001053A0 /* Advent2023.app */;
+			productType = "com.apple.product-type.application";
+		};
+		27EE905E2B1E3E26001053A0 /* Advent2023Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 27EE90762B1E3E26001053A0 /* Build configuration list for PBXNativeTarget "Advent2023Tests" */;
+			buildPhases = (
+				27EE905B2B1E3E26001053A0 /* Sources */,
+				27EE905C2B1E3E26001053A0 /* Frameworks */,
+				27EE905D2B1E3E26001053A0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				27EE90612B1E3E26001053A0 /* PBXTargetDependency */,
+			);
+			name = Advent2023Tests;
+			productName = Advent2023Tests;
+			productReference = 27EE905F2B1E3E26001053A0 /* Advent2023Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		27EE90682B1E3E26001053A0 /* Advent2023UITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 27EE90792B1E3E26001053A0 /* Build configuration list for PBXNativeTarget "Advent2023UITests" */;
+			buildPhases = (
+				27EE90652B1E3E26001053A0 /* Sources */,
+				27EE90662B1E3E26001053A0 /* Frameworks */,
+				27EE90672B1E3E26001053A0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				27EE906B2B1E3E26001053A0 /* PBXTargetDependency */,
+			);
+			name = Advent2023UITests;
+			productName = Advent2023UITests;
+			productReference = 27EE90692B1E3E26001053A0 /* Advent2023UITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		27EE90462B1E3E25001053A0 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1500;
+				LastUpgradeCheck = 1500;
+				TargetAttributes = {
+					27EE904D2B1E3E25001053A0 = {
+						CreatedOnToolsVersion = 15.0.1;
+					};
+					27EE905E2B1E3E26001053A0 = {
+						CreatedOnToolsVersion = 15.0.1;
+						TestTargetID = 27EE904D2B1E3E25001053A0;
+					};
+					27EE90682B1E3E26001053A0 = {
+						CreatedOnToolsVersion = 15.0.1;
+						TestTargetID = 27EE904D2B1E3E25001053A0;
+					};
+				};
+			};
+			buildConfigurationList = 27EE90492B1E3E25001053A0 /* Build configuration list for PBXProject "Advent2023" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 27EE90452B1E3E25001053A0;
+			productRefGroup = 27EE904F2B1E3E25001053A0 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				27EE904D2B1E3E25001053A0 /* Advent2023 */,
+				27EE905E2B1E3E26001053A0 /* Advent2023Tests */,
+				27EE90682B1E3E26001053A0 /* Advent2023UITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		27EE904C2B1E3E25001053A0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				27EE90592B1E3E26001053A0 /* Preview Assets.xcassets in Resources */,
+				27EE90562B1E3E26001053A0 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		27EE905D2B1E3E26001053A0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		27EE90672B1E3E26001053A0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		27EE904A2B1E3E25001053A0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				27EE90542B1E3E25001053A0 /* ContentView.swift in Sources */,
+				27EE90522B1E3E25001053A0 /* Advent2023App.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		27EE905B2B1E3E26001053A0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				27EE90642B1E3E26001053A0 /* Advent2023Tests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		27EE90652B1E3E26001053A0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				27EE906E2B1E3E26001053A0 /* Advent2023UITests.swift in Sources */,
+				27EE90702B1E3E26001053A0 /* Advent2023UITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		27EE90612B1E3E26001053A0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 27EE904D2B1E3E25001053A0 /* Advent2023 */;
+			targetProxy = 27EE90602B1E3E26001053A0 /* PBXContainerItemProxy */;
+		};
+		27EE906B2B1E3E26001053A0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 27EE904D2B1E3E25001053A0 /* Advent2023 */;
+			targetProxy = 27EE906A2B1E3E26001053A0 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		27EE90712B1E3E26001053A0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		27EE90722B1E3E26001053A0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+			};
+			name = Release;
+		};
+		27EE90742B1E3E26001053A0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Advent2023/Advent2023.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Advent2023/Preview Content\"";
+				DEVELOPMENT_TEAM = DF288G8ZJ6;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mmuszynski.Advent2023;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		27EE90752B1E3E26001053A0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Advent2023/Advent2023.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Advent2023/Preview Content\"";
+				DEVELOPMENT_TEAM = DF288G8ZJ6;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mmuszynski.Advent2023;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		27EE90772B1E3E26001053A0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = DF288G8ZJ6;
+				GENERATE_INFOPLIST_FILE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mmuszynski.Advent2023Tests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Advent2023.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Advent2023";
+			};
+			name = Debug;
+		};
+		27EE90782B1E3E26001053A0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = DF288G8ZJ6;
+				GENERATE_INFOPLIST_FILE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mmuszynski.Advent2023Tests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Advent2023.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Advent2023";
+			};
+			name = Release;
+		};
+		27EE907A2B1E3E26001053A0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = DF288G8ZJ6;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mmuszynski.Advent2023UITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = Advent2023;
+			};
+			name = Debug;
+		};
+		27EE907B2B1E3E26001053A0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = DF288G8ZJ6;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mmuszynski.Advent2023UITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = Advent2023;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		27EE90492B1E3E25001053A0 /* Build configuration list for PBXProject "Advent2023" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				27EE90712B1E3E26001053A0 /* Debug */,
+				27EE90722B1E3E26001053A0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		27EE90732B1E3E26001053A0 /* Build configuration list for PBXNativeTarget "Advent2023" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				27EE90742B1E3E26001053A0 /* Debug */,
+				27EE90752B1E3E26001053A0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		27EE90762B1E3E26001053A0 /* Build configuration list for PBXNativeTarget "Advent2023Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				27EE90772B1E3E26001053A0 /* Debug */,
+				27EE90782B1E3E26001053A0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		27EE90792B1E3E26001053A0 /* Build configuration list for PBXNativeTarget "Advent2023UITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				27EE907A2B1E3E26001053A0 /* Debug */,
+				27EE907B2B1E3E26001053A0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 27EE90462B1E3E25001053A0 /* Project object */;
+}
