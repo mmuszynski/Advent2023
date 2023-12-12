@@ -1,0 +1,33 @@
+{
+  "configurations" : [
+    {
+      "id" : "F9ED60E7-1D63-49C4-A7E6-FB5CE881A784",
+      "name" : "Test Scheme Action",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "targetForVariableExpansion" : {
+      "containerPath" : "container:Advent2023.xcodeproj",
+      "identifier" : "27EE904D2B1E3E25001053A0",
+      "name" : "Advent2023"
+    }
+  },
+  "testTargets" : [
+    {
+      "parallelizable" : true,
+      "skippedTests" : [
+        "Advent2023Tests",
+        "Advent2023Tests\/testDay3()"
+      ],
+      "target" : {
+        "containerPath" : "container:Advent2023.xcodeproj",
+        "identifier" : "27EE905E2B1E3E26001053A0",
+        "name" : "Advent2023Tests"
+      }
+    }
+  ],
+  "version" : 1
+}
