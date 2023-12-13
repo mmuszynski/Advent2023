@@ -16,21 +16,18 @@ extension Coordinate: Identifiable {
 
 struct PipeMapView: View {
     var map: PipeMap
-    @State var loop: [Coordinate] = []
+    @State var loop: [Coordinate : CoordinateEdge] = [:]
     
     var body: some View {
         ScrollView {
-            LazyVGrid(columns: Array(repeating: GridItem(.fixed(10), spacing: 0), count: map.columnCount), spacing: 0) {
-                ForEach(map.orderedCoordinates) { coord in
-                    let pipe = map.pipes[coord]!
-                    PipeSegmentView(segmentType: pipe)
-                        .foregroundStyle(loop.contains(coord) ? .green : .gray)
-                        .background(.secondary)
-                }
+            ZStack {
+                PipeSegmentView(segments: map.pipes)
             }
         }
         .task {
-            self.loop = map.walkLoop(from: map.startingLocation!)
+            let loop = map.walkLoop(from: map.startingLocation!)
+            let dict = map.pipes.filter { loop.contains($0.key) }
+            self.loop = dict
         }
     }
 }

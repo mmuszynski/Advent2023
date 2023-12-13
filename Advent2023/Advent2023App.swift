@@ -12,7 +12,8 @@ import BundleURL
 struct Advent2023App: App {
     var body: some Scene {
         WindowGroup {
-            PipeMapView(map: PipeMap(string: try! String(contentsOf: #bundleURL("inputDay10")!)))
+            //PipeMapView(map: PipeMap(string: try! String(contentsOf: #bundleURL("inputDay10")!)))
+            Text("Placeholder")
         }
     }
 }

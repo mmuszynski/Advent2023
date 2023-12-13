@@ -130,9 +130,9 @@ struct PipeMap {
         for (row, line) in string.separatedByLine.enumerated() {
             for (col, char) in line.enumerated() {
                 pipes[Coordinate(row: row, col: col)] = CoordinateEdge(character: char)
-                columnCount = col
+                columnCount = col + 1
             }
-            rowCount = row
+            rowCount = row + 1
         }
         
         if let unknown = pipes.first(where: { (key: Coordinate, value: CoordinateEdge) in

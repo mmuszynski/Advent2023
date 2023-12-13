@@ -8,41 +8,79 @@
 import Foundation
 
 struct GalacticMap {
-    enum GalacticContent {
+    enum GalacticContent: CustomDebugStringConvertible {
         case empty
         case galaxy
-    }
-    
-    var galaxies: [Coordinate] = []
-    var map: [Coordinate: GalacticContent] = [:]
-    
-    init(string: String) {
-        //get the lines
-        let lines = string.separatedByLine
-        var row = 0
+        case vastNothingness
         
-        for line in lines {
-            for (col, char) in line.enumerated() {
-                switch char {
-                case ".":
-                    map[Coordinate(row: row, col: col)] = .empty
-                case "#":
-                    map[Coordinate(row: row, col: col)] = .galaxy
-                default:
-                    fatalError()
-                }
+        var debugDescription: String {
+            switch self {
+            case .empty:
+                return "."
+            case .galaxy:
+                return "#"
+            case .vastNothingness:
+                return "@"
             }
-            
-            row += 1
         }
     }
     
-    func row(_ row: Int) -> [GalacticContent] {
-        map.filter { $0.key.row == row }.sorted(by: { $0.key.x < $1.key.x }).map(\.value)
+    var map: Matrix2D<GalacticContent>
+    var galaxies: [Coordinate] {
+        map.coordinates(where: { content in
+            content == .galaxy
+        })
     }
     
-    func column(_ column: Int) -> [GalacticContent] {
-        map.filter { $0.key.col == column }.sorted(by: { $0.key.x < $1.key.x }).map(\.value)
+    init(string: String) {
+        map = Matrix2D(string: string) { line in
+            line.map { char in
+                switch char {
+                case ".":
+                    return .empty
+                case "#":
+                    return .galaxy
+                default:
+                    fatalError(String(char))
+                }
+            }
+        }
+    }
+    
+    func distance(from first: Coordinate, to second: Coordinate) -> Int {
+        var first = first
+        var accum = 0
+        
+        func value(from element: GalacticContent) -> Int {
+            switch element {
+            case .empty, .galaxy:
+                return 1
+            case .vastNothingness:
+                return 10
+            }
+        }
+        
+        while first.x < second.x {
+            first = first.advancing(x: 1, y: 0)
+            accum += value(from: self.map.element(at: first))
+        }
+        
+        while first.y < second.y {
+            first = first.advancing(x: 0, y: 1)
+            accum += value(from: self.map.element(at: first))
+        }
+        
+        while second.x < first.x {
+            first = first.advancing(x: -1, y: 0)
+            accum += value(from: self.map.element(at: first))
+        }
+        
+        while second.y < first.y {
+            first = first.advancing(x: 0, y: -1)
+            accum += value(from: self.map.element(at: first))
+        }
+        
+        return accum
     }
     
 }

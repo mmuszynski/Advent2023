@@ -37,9 +37,15 @@
 		274FA3712B29190A00CBE0F0 /* inputDay11 in Resources */ = {isa = PBXBuildFile; fileRef = 274FA36F2B29190A00CBE0F0 /* inputDay11 */; };
 		274FA3722B29190A00CBE0F0 /* exampleDay11 in Resources */ = {isa = PBXBuildFile; fileRef = 274FA3702B29190A00CBE0F0 /* exampleDay11 */; };
 		274FA3742B29191300CBE0F0 /* GalacticMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 274FA3732B29191300CBE0F0 /* GalacticMap.swift */; };
-		274FA3762B292EA700CBE0F0 /* TwoDimensionalArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 274FA3752B292EA700CBE0F0 /* TwoDimensionalArray.swift */; };
+		274FA3762B292EA700CBE0F0 /* Matrix2D.swift in Sources */ = {isa = PBXBuildFile; fileRef = 274FA3752B292EA700CBE0F0 /* Matrix2D.swift */; };
 		274FA3782B2942ED00CBE0F0 /* PipeSegmentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 274FA3772B2942ED00CBE0F0 /* PipeSegmentView.swift */; };
 		274FA37A2B2946D000CBE0F0 /* PipeMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 274FA3792B2946D000CBE0F0 /* PipeMapView.swift */; };
+		276703222B29FCAA0023B1AF /* MatrixTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 276703212B29FCAA0023B1AF /* MatrixTests.swift */; };
+		276703252B29FCF10023B1AF /* MatrixRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 276703242B29FCF10023B1AF /* MatrixRow.swift */; };
+		276703272B2A071B0023B1AF /* MatrixInit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 276703262B2A071B0023B1AF /* MatrixInit.swift */; };
+		276703292B2A0EE90023B1AF /* Day11.swift in Sources */ = {isa = PBXBuildFile; fileRef = 276703282B2A0EE90023B1AF /* Day11.swift */; };
+		2767032B2B2A146E0023B1AF /* MatrixColumn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2767032A2B2A146E0023B1AF /* MatrixColumn.swift */; };
+		2767032D2B2A1F8F0023B1AF /* CoordinateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2767032C2B2A1F8F0023B1AF /* CoordinateTests.swift */; };
 		2772854B2B222D9100700551 /* inputDay5 in Resources */ = {isa = PBXBuildFile; fileRef = 278F51922B221CA200EE69B6 /* inputDay5 */; };
 		277772362B275FCF006702BA /* exampleDay9 in Resources */ = {isa = PBXBuildFile; fileRef = 277772312B275FCF006702BA /* exampleDay9 */; };
 		277772372B275FCF006702BA /* inputDay9 in Resources */ = {isa = PBXBuildFile; fileRef = 277772322B275FCF006702BA /* inputDay9 */; };
@@ -104,9 +110,15 @@
 		274FA36F2B29190A00CBE0F0 /* inputDay11 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = inputDay11; sourceTree = "<group>"; };
 		274FA3702B29190A00CBE0F0 /* exampleDay11 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = exampleDay11; sourceTree = "<group>"; };
 		274FA3732B29191300CBE0F0 /* GalacticMap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalacticMap.swift; sourceTree = "<group>"; };
-		274FA3752B292EA700CBE0F0 /* TwoDimensionalArray.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwoDimensionalArray.swift; sourceTree = "<group>"; };
+		274FA3752B292EA700CBE0F0 /* Matrix2D.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Matrix2D.swift; sourceTree = "<group>"; };
 		274FA3772B2942ED00CBE0F0 /* PipeSegmentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PipeSegmentView.swift; sourceTree = "<group>"; };
 		274FA3792B2946D000CBE0F0 /* PipeMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PipeMapView.swift; sourceTree = "<group>"; };
+		276703212B29FCAA0023B1AF /* MatrixTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatrixTests.swift; sourceTree = "<group>"; };
+		276703242B29FCF10023B1AF /* MatrixRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatrixRow.swift; sourceTree = "<group>"; };
+		276703262B2A071B0023B1AF /* MatrixInit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatrixInit.swift; sourceTree = "<group>"; };
+		276703282B2A0EE90023B1AF /* Day11.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day11.swift; sourceTree = "<group>"; };
+		2767032A2B2A146E0023B1AF /* MatrixColumn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatrixColumn.swift; sourceTree = "<group>"; };
+		2767032C2B2A1F8F0023B1AF /* CoordinateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinateTests.swift; sourceTree = "<group>"; };
 		277772312B275FCF006702BA /* exampleDay9 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = exampleDay9; sourceTree = "<group>"; };
 		277772322B275FCF006702BA /* inputDay9 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = inputDay9; sourceTree = "<group>"; };
 		278F51902B221C1C00EE69B6 /* exampleDay5 */ = {isa = PBXFileReference; lastKnownFileType = text; path = exampleDay5; sourceTree = "<group>"; };
@@ -247,6 +259,17 @@
 			path = "Day 11";
 			sourceTree = "<group>";
 		};
+		276703232B29FCE40023B1AF /* Matrix2D */ = {
+			isa = PBXGroup;
+			children = (
+				274FA3752B292EA700CBE0F0 /* Matrix2D.swift */,
+				276703242B29FCF10023B1AF /* MatrixRow.swift */,
+				2767032A2B2A146E0023B1AF /* MatrixColumn.swift */,
+				276703262B2A071B0023B1AF /* MatrixInit.swift */,
+			);
+			path = Matrix2D;
+			sourceTree = "<group>";
+		};
 		277772302B275FCF006702BA /* Day 9 */ = {
 			isa = PBXGroup;
 			children = (
@@ -315,7 +338,7 @@
 				27E603BD2B20FBD800C4CEC3 /* Helpers.swift */,
 				27EE90532B1E3E25001053A0 /* ContentView.swift */,
 				274FA3682B28AF6300CBE0F0 /* Coordinate.swift */,
-				274FA3752B292EA700CBE0F0 /* TwoDimensionalArray.swift */,
+				276703232B29FCE40023B1AF /* Matrix2D */,
 				27E603B92B20F40F00C4CEC3 /* Day 3 */,
 				27E603BA2B20F41D00C4CEC3 /* Day 4 */,
 				278F518F2B221C0100EE69B6 /* Day 5 */,
@@ -343,6 +366,8 @@
 		27EE90622B1E3E26001053A0 /* Advent2023Tests */ = {
 			isa = PBXGroup;
 			children = (
+				276703212B29FCAA0023B1AF /* MatrixTests.swift */,
+				2767032C2B2A1F8F0023B1AF /* CoordinateTests.swift */,
 				27EE90632B1E3E26001053A0 /* Days3-4.swift */,
 				274FA35E2B276B5200CBE0F0 /* Day 5 */,
 				2746B0342B257B2F00C5A615 /* Day6.swift */,
@@ -350,6 +375,7 @@
 				2746B0562B26618E00C5A615 /* Day 8 */,
 				274FA35D2B276B3600CBE0F0 /* Day 9 */,
 				274FA36A2B28BA8E00CBE0F0 /* Day10.swift */,
+				276703282B2A0EE90023B1AF /* Day11.swift */,
 			);
 			path = Advent2023Tests;
 			sourceTree = "<group>";
@@ -489,6 +515,7 @@
 				2746B0442B26163300C5A615 /* CamelCardsHand.swift in Sources */,
 				27EE907D2B1E3E31001053A0 /* Schematic.swift in Sources */,
 				27EE90832B1E3EE7001053A0 /* FileLocations.swift in Sources */,
+				276703252B29FCF10023B1AF /* MatrixRow.swift in Sources */,
 				274FA3672B28AE3E00CBE0F0 /* PipeSegment.swift in Sources */,
 				27F5AD952B227D8A003AFB30 /* RangeComparisons.swift in Sources */,
 				278F51992B22217000EE69B6 /* Almanac.swift in Sources */,
@@ -496,8 +523,10 @@
 				274FA3782B2942ED00CBE0F0 /* PipeSegmentView.swift in Sources */,
 				2746B04C2B2635B500C5A615 /* CamelCardBid.swift in Sources */,
 				2746B0422B26162A00C5A615 /* CamelCard.swift in Sources */,
-				274FA3762B292EA700CBE0F0 /* TwoDimensionalArray.swift in Sources */,
+				274FA3762B292EA700CBE0F0 /* Matrix2D.swift in Sources */,
 				27E603BC2B20F42C00C4CEC3 /* ScratchCard.swift in Sources */,
+				276703272B2A071B0023B1AF /* MatrixInit.swift in Sources */,
+				2767032B2B2A146E0023B1AF /* MatrixColumn.swift in Sources */,
 				274FA3742B29191300CBE0F0 /* GalacticMap.swift in Sources */,
 				2746B0552B2660E700C5A615 /* Node.swift in Sources */,
 				274FA37A2B2946D000CBE0F0 /* PipeMapView.swift in Sources */,
@@ -508,6 +537,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				276703222B29FCAA0023B1AF /* MatrixTests.swift in Sources */,
+				276703292B2A0EE90023B1AF /* Day11.swift in Sources */,
 				278F51962B221EB800EE69B6 /* Day5.swift in Sources */,
 				274FA3602B276B6F00CBE0F0 /* Day 9.swift in Sources */,
 				2746B05A2B26641900C5A615 /* Day 8.swift in Sources */,
@@ -519,6 +550,7 @@
 				2746B0302B24A4FA00C5A615 /* GardenRangeTests.swift in Sources */,
 				27EE90642B1E3E26001053A0 /* Days3-4.swift in Sources */,
 				2746B0482B26194E00C5A615 /* CamelCardSorting.swift in Sources */,
+				2767032D2B2A1F8F0023B1AF /* CoordinateTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

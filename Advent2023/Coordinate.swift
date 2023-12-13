@@ -51,6 +51,10 @@ public struct Coordinate: Hashable, ExpressibleByStringLiteral {
     public func advancing(x: Int, y: Int) -> Coordinate {
         Coordinate(x: self.x + x, y: self.y + y)
     }
+    
+    func distance(from other: Coordinate) -> Int {
+        return abs(other.x - self.x) + abs(other.y - self.y)
+    }
 }
 
 extension Coordinate: AdditiveArithmetic {

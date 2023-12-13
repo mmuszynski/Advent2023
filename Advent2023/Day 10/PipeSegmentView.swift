@@ -6,55 +6,69 @@
 //
 
 import SwiftUI
+import BundleURL
 
 struct PipeShape: Shape {
-    var segmentType: CoordinateEdge
+    var segments: [Coordinate : CoordinateEdge]
+    
+    var extents: Coordinate {
+        segments.keys.max { one, two in
+            one.x < two.x && one.y < two.y
+        }!
+    }
     
     func path(in rect: CGRect) -> Path {
         Path { path in
-            if segmentType.contains(.top) {
-                path.move(to: CGPoint(x: 0.5, y: 0.5))
-                path.addLine(to: CGPoint(x: 0.5, y: 0))
+            for (coordinate, segmentType) in segments {
+                let center = CGPoint(
+                    x: CGFloat(coordinate.x),
+                    y: CGFloat(coordinate.y)
+                )
+                                
+                if segmentType.contains(.top) {
+                    path.move(to: center)
+                    path.addLine(to: CGPoint(x: center.x + 0.5,
+                                             y: center.y + 0))
+                }
+                
+                if segmentType.contains(.left) {
+                    path.move(to: center)
+                    path.addLine(to: CGPoint(x: center.x + 0,
+                                             y: center.y + 0.5))
+                }
+                
+                if segmentType.contains(.bottom) {
+                    path.move(to: center)
+                    path.addLine(to: CGPoint(x: center.x + 0,
+                                             y: center.y + 0.5))
+                }
+                
+                if segmentType.contains(.right) {
+                    path.move(to: center)
+                    path.addLine(to: CGPoint(x: center.x + 0.5,
+                                             y: center.y + 0))
+                }
             }
             
-            if segmentType.contains(.left) {
-                path.move(to: CGPoint(x: 0.5, y: 0.5))
-                path.addLine(to: CGPoint(x: 0, y: 0.5))
-            }
-            
-            if segmentType.contains(.bottom) {
-                path.move(to: CGPoint(x: 0.5, y: 0.5))
-                path.addLine(to: CGPoint(x: 0.5, y: 1))
-            }
-            
-            if segmentType.contains(.right) {
-                path.move(to: CGPoint(x: 0.5, y: 0.5))
-                path.addLine(to: CGPoint(x: 1, y: 0.5))
-            }
-            
-            path = path.applying(CGAffineTransform(scaleX: rect.size.width, y: rect.size.height))
+            path = path.applying( CGAffineTransform(scaleX: rect.size.width / 100, y: rect.size.height))
         }
     }
 }
 
 struct PipeSegmentView: View {
-    var segmentType: CoordinateEdge
-    var color: Color = .red
+    var segments: [Coordinate : CoordinateEdge]
     
     var body: some View {
-        PipeShape(segmentType: segmentType)
+        PipeShape(segments: segments)
             .stroke()
     }
 }
 
 struct PipeSegmentViewPreview: PreviewProvider {
+    static let map = PipeMap(string: try! String(contentsOf: #bundleURL("exampleDay10")!))
     static var previews: some View {
         HStack {
-            Group {
-                PipeSegmentView(segmentType: [.bottom, .right])
-                PipeSegmentView(segmentType: [.topRight])
-                PipeSegmentView(segmentType: [.bottomLeft])
-            }
+            PipeSegmentView(segments: map.pipes)
         }
     }
 }
