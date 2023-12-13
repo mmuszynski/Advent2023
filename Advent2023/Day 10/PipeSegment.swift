@@ -51,24 +51,40 @@ struct CoordinateEdge: OptionSet {
         }
     }
     
-    private var topExit: Coordinate = "0, -1"
-    private var bottomExit: Coordinate = "0, 1"
-    private var leftExit: Coordinate = "-1, 0"
-    private var rightExit: Coordinate = "1, 0"
+    static let topExit: Coordinate = "0, -1"
+    static let bottomExit: Coordinate = "0, 1"
+    static let leftExit: Coordinate = "-1, 0"
+    static let rightExit: Coordinate = "1, 0"
+    
+    init(coordinates: [Coordinate]) {
+        self = .none
+        if coordinates.contains(CoordinateEdge.topExit) {
+            self.insert(.top)
+        }
+        if coordinates.contains(CoordinateEdge.bottomExit) {
+            self.insert(.bottom)
+        }
+        if coordinates.contains(CoordinateEdge.leftExit) {
+            self.insert(.left)
+        }
+        if coordinates.contains(CoordinateEdge.rightExit) {
+            self.insert(.right)
+        }
+    }
     
     func nextPositions(from coordinate: Coordinate) -> [Coordinate] {
         var positions = [Coordinate]()
         if self.contains(.top) {
-            positions.append(coordinate + topExit)
+            positions.append(coordinate + CoordinateEdge.topExit)
         }
         if self.contains(.bottom) {
-            positions.append(coordinate + bottomExit)
+            positions.append(coordinate + CoordinateEdge.bottomExit)
         }
         if self.contains(.left) {
-            positions.append(coordinate + leftExit)
+            positions.append(coordinate + CoordinateEdge.leftExit)
         }
         if self.contains(.right) {
-            positions.append(coordinate + rightExit)
+            positions.append(coordinate + CoordinateEdge.rightExit)
         }
         return positions
     }
@@ -78,17 +94,17 @@ extension CoordinateEdge: CustomStringConvertible {
     var description: String {
         switch self {
         case .vertical:
-            return "|"
-        case .horizontal: 
-            return "-"
+            return "\u{2503}"
+        case .horizontal:
+            return "\u{2501}"
         case .topRight:
-            return "L"
+            return "\u{2517}"
         case .topLeft:
-            return "J"
-        case .bottomLeft: 
-            return "7"
+            return "\u{251B}"
+        case .bottomLeft:
+            return "\u{2513}"
         case .bottomRight:
-            return "F"
+            return "\u{250F}"
         case .none:
             return "."
         case .unknown:
@@ -99,87 +115,92 @@ extension CoordinateEdge: CustomStringConvertible {
     }
 }
 
-enum PipeSegment: Character {
-    case vertical = "|"
-    case horizontal = "-"
-    case topRight = "L"
-    case topLeft = "J"
-    case bottomLeft = "7"
-    case bottomRight = "F"
-    case none = "."
-    case unknown = "S"
-    
-    func nextPositions(from coordinate: Coordinate) -> [Coordinate] {
-        switch self {
-        case .vertical:
-            return [coordinate + Coordinate(x: 0, y: 1),
-                    coordinate + Coordinate(x: 0, y: -1)]
-        case .horizontal:
-            return [coordinate + Coordinate(x: 1, y: 0),
-                    coordinate + Coordinate(x: -1, y: 0)]
-        case .topRight:
-            return [coordinate + Coordinate(x: 1, y: 1),
-                    coordinate + Coordinate(x: -1, y: -1)]
-        case .topLeft:
-            return [coordinate + Coordinate(x: -1, y: 1),
-                    coordinate + Coordinate(x: 1, y: -1)]
-        case .bottomLeft:
-            return [coordinate + Coordinate(x: -1, y: -1),
-                    coordinate + Coordinate(x: 1, y: 1)]
-        case .bottomRight:
-            return [coordinate + Coordinate(x: 1, y: -1),
-                    coordinate + Coordinate(x: -1, y: 1)]
-        case .none:
-            fatalError("Shouldn't be able to get to this position")
-        case .unknown:
-            fatalError("Can't get position from unknown")
-        }
-    }
-}
-
 struct PipeMap {
     var pipes: [Coordinate : CoordinateEdge]
+    var startingLocation: Coordinate?
+    
+    var rowCount: Int = 0
+    var columnCount: Int = 0
+    
+    var orderedCoordinates: [Coordinate] = []
     
     init(string: String) {
         pipes = [:]
+        
         for (row, line) in string.separatedByLine.enumerated() {
             for (col, char) in line.enumerated() {
                 pipes[Coordinate(row: row, col: col)] = CoordinateEdge(character: char)
+                columnCount = col
             }
+            rowCount = row
         }
+        
+        if let unknown = pipes.first(where: { (key: Coordinate, value: CoordinateEdge) in
+            value == .unknown
+        }) {
+            startingLocation = unknown.key
+            pipes[unknown.key] = determineSegment(at: unknown.key)
+        }
+        
+        orderedCoordinates =
+            pipes.keys.sorted { one, two in
+                if one.row == two.row { return one.col < two.col }
+                return one.row < two.row
+            }
     }
     
-    func determineSegment(at coordinate: Coordinate) -> PipeSegment {
+    func determineSegment(at coordinate: Coordinate) -> CoordinateEdge {
         //check all segments around
-        let exits = ["0, -1", "-1, 0", "1, 0", "0, 1"]
-            .map(Coordinate.init)
+        let exits = [CoordinateEdge.topExit,
+                     CoordinateEdge.leftExit,
+                     CoordinateEdge.rightExit,
+                     CoordinateEdge.bottomExit]
             .filter({ adjacent in
-                let adjacentPipe = pipes[adjacent + coordinate]
-                return adjacentPipe?.nextPositions(from: coordinate).contains(coordinate) == true
+                let adjacent = adjacent + coordinate
+                let adjacentPipe = pipes[adjacent]
+                return adjacentPipe?.nextPositions(from: adjacent).contains(coordinate) == true
             })
-
+        
         guard exits.count == 2 else { fatalError() }
-        fatalError()
+        return CoordinateEdge(coordinates: exits)
     }
     
-    func findLoop(starting: Coordinate) -> [Coordinate] {
-        var totalLoop = [starting]
-        
-        while totalLoop.count < 1 && totalLoop.first != totalLoop.last {
-            guard let current = totalLoop.last else { fatalError() }
-            let segment = pipes[current]
+    func nextSegments(from coordinate: Coordinate) -> [Coordinate] {
+        return pipes[coordinate].map { $0.nextPositions(from: coordinate) } ?? []
+    }
+    
+    func findLoop(from newCoordinates: [Coordinate], existing: [Coordinate] = []) -> [Coordinate] {
+        let next = newCoordinates.filter { !existing.suffix(2).contains($0) }
+        if next.count > 0 {
+            return findLoop(from: Array(next.map(nextSegments(from:)).joined()),
+                            existing: existing + next)
+        } else {
+            return Array(Set(existing))
+        }
+    }
+    
+    func walkLoop(from start: Coordinate) -> [Coordinate] {
+        var positions = [start]
+        while positions.count == 1 || positions.last != start {
+            let current = positions.last!
+            let pipe = pipes[current]!
+            
+            if let next = pipe.nextPositions(from: current).filter({ !positions.suffix(2).contains($0) }).first {
+                positions.append(next)
+            }            
         }
         
-        return totalLoop.dropLast()
+        return positions
     }
     
-    
-    fileprivate func line(_ row: Int) -> String {
+    func line(_ row: Int, colStart: Int? = nil, colEnd: Int? = nil) -> String {
         var col = 0
         var accum = ""
         while let char = pipes[Coordinate(row: row, col: col)] {
+            if (colStart ?? 0) <= col && (colEnd ?? .max) >= col {
+                accum += char.description
+            }
             col += 1
-            accum += char.description
         }
         return accum
     }

@@ -6,12 +6,13 @@
 //
 
 import SwiftUI
+import BundleURL
 
 @main
 struct Advent2023App: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            PipeMapView(map: PipeMap(string: try! String(contentsOf: #bundleURL("inputDay10")!)))
         }
     }
 }

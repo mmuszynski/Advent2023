@@ -33,6 +33,13 @@
 		274FA3672B28AE3E00CBE0F0 /* PipeSegment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 274FA3662B28AE3E00CBE0F0 /* PipeSegment.swift */; };
 		274FA3692B28AF6300CBE0F0 /* Coordinate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 274FA3682B28AF6300CBE0F0 /* Coordinate.swift */; };
 		274FA36B2B28BA8E00CBE0F0 /* Day10.swift in Sources */ = {isa = PBXBuildFile; fileRef = 274FA36A2B28BA8E00CBE0F0 /* Day10.swift */; };
+		274FA36D2B28CEE200CBE0F0 /* complexExample10 in Resources */ = {isa = PBXBuildFile; fileRef = 274FA36C2B28CEE200CBE0F0 /* complexExample10 */; };
+		274FA3712B29190A00CBE0F0 /* inputDay11 in Resources */ = {isa = PBXBuildFile; fileRef = 274FA36F2B29190A00CBE0F0 /* inputDay11 */; };
+		274FA3722B29190A00CBE0F0 /* exampleDay11 in Resources */ = {isa = PBXBuildFile; fileRef = 274FA3702B29190A00CBE0F0 /* exampleDay11 */; };
+		274FA3742B29191300CBE0F0 /* GalacticMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 274FA3732B29191300CBE0F0 /* GalacticMap.swift */; };
+		274FA3762B292EA700CBE0F0 /* TwoDimensionalArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 274FA3752B292EA700CBE0F0 /* TwoDimensionalArray.swift */; };
+		274FA3782B2942ED00CBE0F0 /* PipeSegmentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 274FA3772B2942ED00CBE0F0 /* PipeSegmentView.swift */; };
+		274FA37A2B2946D000CBE0F0 /* PipeMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 274FA3792B2946D000CBE0F0 /* PipeMapView.swift */; };
 		2772854B2B222D9100700551 /* inputDay5 in Resources */ = {isa = PBXBuildFile; fileRef = 278F51922B221CA200EE69B6 /* inputDay5 */; };
 		277772362B275FCF006702BA /* exampleDay9 in Resources */ = {isa = PBXBuildFile; fileRef = 277772312B275FCF006702BA /* exampleDay9 */; };
 		277772372B275FCF006702BA /* inputDay9 in Resources */ = {isa = PBXBuildFile; fileRef = 277772322B275FCF006702BA /* inputDay9 */; };
@@ -93,6 +100,13 @@
 		274FA3662B28AE3E00CBE0F0 /* PipeSegment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PipeSegment.swift; sourceTree = "<group>"; };
 		274FA3682B28AF6300CBE0F0 /* Coordinate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinate.swift; sourceTree = "<group>"; };
 		274FA36A2B28BA8E00CBE0F0 /* Day10.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day10.swift; sourceTree = "<group>"; };
+		274FA36C2B28CEE200CBE0F0 /* complexExample10 */ = {isa = PBXFileReference; lastKnownFileType = text; path = complexExample10; sourceTree = "<group>"; };
+		274FA36F2B29190A00CBE0F0 /* inputDay11 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = inputDay11; sourceTree = "<group>"; };
+		274FA3702B29190A00CBE0F0 /* exampleDay11 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = exampleDay11; sourceTree = "<group>"; };
+		274FA3732B29191300CBE0F0 /* GalacticMap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalacticMap.swift; sourceTree = "<group>"; };
+		274FA3752B292EA700CBE0F0 /* TwoDimensionalArray.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwoDimensionalArray.swift; sourceTree = "<group>"; };
+		274FA3772B2942ED00CBE0F0 /* PipeSegmentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PipeSegmentView.swift; sourceTree = "<group>"; };
+		274FA3792B2946D000CBE0F0 /* PipeMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PipeMapView.swift; sourceTree = "<group>"; };
 		277772312B275FCF006702BA /* exampleDay9 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = exampleDay9; sourceTree = "<group>"; };
 		277772322B275FCF006702BA /* inputDay9 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = inputDay9; sourceTree = "<group>"; };
 		278F51902B221C1C00EE69B6 /* exampleDay5 */ = {isa = PBXFileReference; lastKnownFileType = text; path = exampleDay5; sourceTree = "<group>"; };
@@ -215,9 +229,22 @@
 			children = (
 				274FA3622B28AD8D00CBE0F0 /* inputDay10 */,
 				274FA3632B28AD8D00CBE0F0 /* exampleDay10 */,
+				274FA36C2B28CEE200CBE0F0 /* complexExample10 */,
 				274FA3662B28AE3E00CBE0F0 /* PipeSegment.swift */,
+				274FA3772B2942ED00CBE0F0 /* PipeSegmentView.swift */,
+				274FA3792B2946D000CBE0F0 /* PipeMapView.swift */,
 			);
 			path = "Day 10";
+			sourceTree = "<group>";
+		};
+		274FA36E2B29190A00CBE0F0 /* Day 11 */ = {
+			isa = PBXGroup;
+			children = (
+				274FA36F2B29190A00CBE0F0 /* inputDay11 */,
+				274FA3702B29190A00CBE0F0 /* exampleDay11 */,
+				274FA3732B29191300CBE0F0 /* GalacticMap.swift */,
+			);
+			path = "Day 11";
 			sourceTree = "<group>";
 		};
 		277772302B275FCF006702BA /* Day 9 */ = {
@@ -288,6 +315,7 @@
 				27E603BD2B20FBD800C4CEC3 /* Helpers.swift */,
 				27EE90532B1E3E25001053A0 /* ContentView.swift */,
 				274FA3682B28AF6300CBE0F0 /* Coordinate.swift */,
+				274FA3752B292EA700CBE0F0 /* TwoDimensionalArray.swift */,
 				27E603B92B20F40F00C4CEC3 /* Day 3 */,
 				27E603BA2B20F41D00C4CEC3 /* Day 4 */,
 				278F518F2B221C0100EE69B6 /* Day 5 */,
@@ -296,6 +324,7 @@
 				2746B04F2B26601800C5A615 /* Day 8 */,
 				277772302B275FCF006702BA /* Day 9 */,
 				274FA3612B28AD8D00CBE0F0 /* Day 10 */,
+				274FA36E2B29190A00CBE0F0 /* Day 11 */,
 				27EE905A2B1E3E26001053A0 /* Advent2023.entitlements */,
 				27EE90552B1E3E26001053A0 /* Assets.xcassets */,
 				27EE90572B1E3E26001053A0 /* Preview Content */,
@@ -417,6 +446,7 @@
 				27EE90812B1E3E6E001053A0 /* inputDay3 in Resources */,
 				274FA3652B28AD8D00CBE0F0 /* exampleDay10 in Resources */,
 				2746B03D2B2614D700C5A615 /* exampleDay7 in Resources */,
+				274FA36D2B28CEE200CBE0F0 /* complexExample10 in Resources */,
 				2746B03E2B2614D700C5A615 /* inputDay7 in Resources */,
 				27EE907F2B1E3E5A001053A0 /* exampleDay3 in Resources */,
 				2746B05C2B26678300C5A615 /* exampleDay8-2 in Resources */,
@@ -427,7 +457,9 @@
 				27E603C02B20FCB800C4CEC3 /* exampleDay4 in Resources */,
 				27E603B82B20F3FB00C4CEC3 /* inputDay4 in Resources */,
 				277772362B275FCF006702BA /* exampleDay9 in Resources */,
+				274FA3712B29190A00CBE0F0 /* inputDay11 in Resources */,
 				2746B0392B257B7700C5A615 /* exampleDay6 in Resources */,
+				274FA3722B29190A00CBE0F0 /* exampleDay11 in Resources */,
 				27EE90562B1E3E26001053A0 /* Assets.xcassets in Resources */,
 				2746B0372B257B6800C5A615 /* inputDay6 in Resources */,
 				2746B05E2B2668CB00C5A615 /* exampleDay8-3 in Resources */,
@@ -461,10 +493,14 @@
 				27F5AD952B227D8A003AFB30 /* RangeComparisons.swift in Sources */,
 				278F51992B22217000EE69B6 /* Almanac.swift in Sources */,
 				27EE90522B1E3E25001053A0 /* Advent2023App.swift in Sources */,
+				274FA3782B2942ED00CBE0F0 /* PipeSegmentView.swift in Sources */,
 				2746B04C2B2635B500C5A615 /* CamelCardBid.swift in Sources */,
 				2746B0422B26162A00C5A615 /* CamelCard.swift in Sources */,
+				274FA3762B292EA700CBE0F0 /* TwoDimensionalArray.swift in Sources */,
 				27E603BC2B20F42C00C4CEC3 /* ScratchCard.swift in Sources */,
+				274FA3742B29191300CBE0F0 /* GalacticMap.swift in Sources */,
 				2746B0552B2660E700C5A615 /* Node.swift in Sources */,
+				274FA37A2B2946D000CBE0F0 /* PipeMapView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
