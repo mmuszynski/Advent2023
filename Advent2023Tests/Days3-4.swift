@@ -8,18 +8,6 @@
 import XCTest
 @testable import Advent2023
 
-extension Array where Element: AdditiveArithmetic {
-    public var sum: Element {
-        self.reduce(0 as! Element, +)
-    }
-}
-
-extension Array where Element: Numeric {
-    public var product: Element {
-        self.reduce(1 as! Element, *)
-    }
-}
-
 final class Advent2023Tests: XCTestCase {
 
 //    func testDay3() throws {

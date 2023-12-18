@@ -46,9 +46,24 @@
 		276703292B2A0EE90023B1AF /* Day11.swift in Sources */ = {isa = PBXBuildFile; fileRef = 276703282B2A0EE90023B1AF /* Day11.swift */; };
 		2767032B2B2A146E0023B1AF /* MatrixColumn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2767032A2B2A146E0023B1AF /* MatrixColumn.swift */; };
 		2767032D2B2A1F8F0023B1AF /* CoordinateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2767032C2B2A1F8F0023B1AF /* CoordinateTests.swift */; };
+		276910982B2A6685006DFAD1 /* exampleDay12 in Resources */ = {isa = PBXBuildFile; fileRef = 276910972B2A6685006DFAD1 /* exampleDay12 */; };
+		2769109A2B2A6698006DFAD1 /* inputDay12 in Resources */ = {isa = PBXBuildFile; fileRef = 276910992B2A6698006DFAD1 /* inputDay12 */; };
+		2769109D2B2A66B6006DFAD1 /* SpringMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2769109C2B2A66B6006DFAD1 /* SpringMap.swift */; };
+		2769109F2B2A67F0006DFAD1 /* Day12.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2769109E2B2A67F0006DFAD1 /* Day12.swift */; };
+		276910A22B2B8601006DFAD1 /* Algorithms in Frameworks */ = {isa = PBXBuildFile; productRef = 276910A12B2B8601006DFAD1 /* Algorithms */; };
+		276910A52B2B8843006DFAD1 /* SpringMapTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 276910A42B2B8843006DFAD1 /* SpringMapTests.swift */; };
 		2772854B2B222D9100700551 /* inputDay5 in Resources */ = {isa = PBXBuildFile; fileRef = 278F51922B221CA200EE69B6 /* inputDay5 */; };
 		277772362B275FCF006702BA /* exampleDay9 in Resources */ = {isa = PBXBuildFile; fileRef = 277772312B275FCF006702BA /* exampleDay9 */; };
 		277772372B275FCF006702BA /* inputDay9 in Resources */ = {isa = PBXBuildFile; fileRef = 277772322B275FCF006702BA /* inputDay9 */; };
+		2787A5352B2CD2C40003180B /* SpringMapCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2787A5342B2CD2C40003180B /* SpringMapCalculator.swift */; };
+		2787A5372B2CD8AC0003180B /* Day12View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2787A5362B2CD8AC0003180B /* Day12View.swift */; };
+		2787A53F2B2DE7090003180B /* Day13.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2787A53E2B2DE7090003180B /* Day13.swift */; };
+		2787A5422B2DE7BA0003180B /* inputDay13 in Resources */ = {isa = PBXBuildFile; fileRef = 2787A5412B2DE7BA0003180B /* inputDay13 */; };
+		2787A5462B2DE8A80003180B /* exampleDay13 in Resources */ = {isa = PBXBuildFile; fileRef = 2787A5452B2DE8A80003180B /* exampleDay13 */; };
+		2787A5482B2FD05E0003180B /* exampleDay14 in Resources */ = {isa = PBXBuildFile; fileRef = 2787A5472B2FD05E0003180B /* exampleDay14 */; };
+		2787A54B2B2FD07A0003180B /* exampleDay14Packed in Resources */ = {isa = PBXBuildFile; fileRef = 2787A54A2B2FD07A0003180B /* exampleDay14Packed */; };
+		2787A54D2B2FD08B0003180B /* Day14.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2787A54C2B2FD08B0003180B /* Day14.swift */; };
+		2787A54F2B2FD7F20003180B /* inputDay14 in Resources */ = {isa = PBXBuildFile; fileRef = 2787A54E2B2FD7F20003180B /* inputDay14 */; };
 		278F51912B221C1C00EE69B6 /* exampleDay5 in Resources */ = {isa = PBXBuildFile; fileRef = 278F51902B221C1C00EE69B6 /* exampleDay5 */; };
 		278F51942B221CBE00EE69B6 /* GardenRange.swift in Sources */ = {isa = PBXBuildFile; fileRef = 278F51932B221CBE00EE69B6 /* GardenRange.swift */; };
 		278F51962B221EB800EE69B6 /* Day5.swift in Sources */ = {isa = PBXBuildFile; fileRef = 278F51952B221EB800EE69B6 /* Day5.swift */; };
@@ -119,8 +134,22 @@
 		276703282B2A0EE90023B1AF /* Day11.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day11.swift; sourceTree = "<group>"; };
 		2767032A2B2A146E0023B1AF /* MatrixColumn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatrixColumn.swift; sourceTree = "<group>"; };
 		2767032C2B2A1F8F0023B1AF /* CoordinateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinateTests.swift; sourceTree = "<group>"; };
+		276910972B2A6685006DFAD1 /* exampleDay12 */ = {isa = PBXFileReference; lastKnownFileType = text; path = exampleDay12; sourceTree = "<group>"; };
+		276910992B2A6698006DFAD1 /* inputDay12 */ = {isa = PBXFileReference; lastKnownFileType = text; path = inputDay12; sourceTree = "<group>"; };
+		2769109C2B2A66B6006DFAD1 /* SpringMap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpringMap.swift; sourceTree = "<group>"; };
+		2769109E2B2A67F0006DFAD1 /* Day12.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day12.swift; sourceTree = "<group>"; };
+		276910A42B2B8843006DFAD1 /* SpringMapTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpringMapTests.swift; sourceTree = "<group>"; };
 		277772312B275FCF006702BA /* exampleDay9 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = exampleDay9; sourceTree = "<group>"; };
 		277772322B275FCF006702BA /* inputDay9 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = inputDay9; sourceTree = "<group>"; };
+		2787A5342B2CD2C40003180B /* SpringMapCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpringMapCalculator.swift; sourceTree = "<group>"; };
+		2787A5362B2CD8AC0003180B /* Day12View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day12View.swift; sourceTree = "<group>"; };
+		2787A53E2B2DE7090003180B /* Day13.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Day13.swift; path = Advent2023Tests/Day13.swift; sourceTree = SOURCE_ROOT; };
+		2787A5412B2DE7BA0003180B /* inputDay13 */ = {isa = PBXFileReference; lastKnownFileType = text; path = inputDay13; sourceTree = "<group>"; };
+		2787A5452B2DE8A80003180B /* exampleDay13 */ = {isa = PBXFileReference; lastKnownFileType = text; path = exampleDay13; sourceTree = "<group>"; };
+		2787A5472B2FD05E0003180B /* exampleDay14 */ = {isa = PBXFileReference; lastKnownFileType = text; path = exampleDay14; sourceTree = "<group>"; };
+		2787A54A2B2FD07A0003180B /* exampleDay14Packed */ = {isa = PBXFileReference; lastKnownFileType = text; path = exampleDay14Packed; sourceTree = "<group>"; };
+		2787A54C2B2FD08B0003180B /* Day14.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day14.swift; sourceTree = "<group>"; };
+		2787A54E2B2FD7F20003180B /* inputDay14 */ = {isa = PBXFileReference; lastKnownFileType = text; path = inputDay14; sourceTree = "<group>"; };
 		278F51902B221C1C00EE69B6 /* exampleDay5 */ = {isa = PBXFileReference; lastKnownFileType = text; path = exampleDay5; sourceTree = "<group>"; };
 		278F51922B221CA200EE69B6 /* inputDay5 */ = {isa = PBXFileReference; lastKnownFileType = text; path = inputDay5; sourceTree = "<group>"; };
 		278F51932B221CBE00EE69B6 /* GardenRange.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GardenRange.swift; sourceTree = "<group>"; };
@@ -152,6 +181,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				276910A22B2B8601006DFAD1 /* Algorithms in Frameworks */,
 				274FA35C2B27698F00CBE0F0 /* BundleURL in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -270,6 +300,27 @@
 			path = Matrix2D;
 			sourceTree = "<group>";
 		};
+		2769109B2B2A66A2006DFAD1 /* Day12 */ = {
+			isa = PBXGroup;
+			children = (
+				276910972B2A6685006DFAD1 /* exampleDay12 */,
+				276910992B2A6698006DFAD1 /* inputDay12 */,
+				2787A5362B2CD8AC0003180B /* Day12View.swift */,
+				2769109C2B2A66B6006DFAD1 /* SpringMap.swift */,
+				2787A5342B2CD2C40003180B /* SpringMapCalculator.swift */,
+			);
+			path = Day12;
+			sourceTree = "<group>";
+		};
+		276910A32B2B8834006DFAD1 /* Day12 */ = {
+			isa = PBXGroup;
+			children = (
+				2769109E2B2A67F0006DFAD1 /* Day12.swift */,
+				276910A42B2B8843006DFAD1 /* SpringMapTests.swift */,
+			);
+			path = Day12;
+			sourceTree = "<group>";
+		};
 		277772302B275FCF006702BA /* Day 9 */ = {
 			isa = PBXGroup;
 			children = (
@@ -277,6 +328,25 @@
 				277772322B275FCF006702BA /* inputDay9 */,
 			);
 			path = "Day 9";
+			sourceTree = "<group>";
+		};
+		2787A5402B2DE7890003180B /* Day 13 */ = {
+			isa = PBXGroup;
+			children = (
+				2787A5412B2DE7BA0003180B /* inputDay13 */,
+				2787A5452B2DE8A80003180B /* exampleDay13 */,
+			);
+			path = "Day 13";
+			sourceTree = "<group>";
+		};
+		2787A5492B2FD0630003180B /* Day14 */ = {
+			isa = PBXGroup;
+			children = (
+				2787A5472B2FD05E0003180B /* exampleDay14 */,
+				2787A54A2B2FD07A0003180B /* exampleDay14Packed */,
+				2787A54E2B2FD7F20003180B /* inputDay14 */,
+			);
+			path = Day14;
 			sourceTree = "<group>";
 		};
 		278F518F2B221C0100EE69B6 /* Day 5 */ = {
@@ -348,8 +418,11 @@
 				277772302B275FCF006702BA /* Day 9 */,
 				274FA3612B28AD8D00CBE0F0 /* Day 10 */,
 				274FA36E2B29190A00CBE0F0 /* Day 11 */,
-				27EE905A2B1E3E26001053A0 /* Advent2023.entitlements */,
+				2769109B2B2A66A2006DFAD1 /* Day12 */,
+				2787A5402B2DE7890003180B /* Day 13 */,
+				2787A5492B2FD0630003180B /* Day14 */,
 				27EE90552B1E3E26001053A0 /* Assets.xcassets */,
+				27EE905A2B1E3E26001053A0 /* Advent2023.entitlements */,
 				27EE90572B1E3E26001053A0 /* Preview Content */,
 			);
 			path = Advent2023;
@@ -376,6 +449,9 @@
 				274FA35D2B276B3600CBE0F0 /* Day 9 */,
 				274FA36A2B28BA8E00CBE0F0 /* Day10.swift */,
 				276703282B2A0EE90023B1AF /* Day11.swift */,
+				276910A32B2B8834006DFAD1 /* Day12 */,
+				2787A53E2B2DE7090003180B /* Day13.swift */,
+				2787A54C2B2FD08B0003180B /* Day14.swift */,
 			);
 			path = Advent2023Tests;
 			sourceTree = "<group>";
@@ -398,6 +474,7 @@
 			name = Advent2023;
 			packageProductDependencies = (
 				274FA35B2B27698F00CBE0F0 /* BundleURL */,
+				276910A12B2B8601006DFAD1 /* Algorithms */,
 			);
 			productName = Advent2023;
 			productReference = 27EE904E2B1E3E25001053A0 /* Advent2023.app */;
@@ -451,6 +528,7 @@
 			mainGroup = 27EE90452B1E3E25001053A0;
 			packageReferences = (
 				274FA35A2B27698F00CBE0F0 /* XCLocalSwiftPackageReference "../../Cocoa/Macros/BundleURL" */,
+				276910A02B2B8601006DFAD1 /* XCRemoteSwiftPackageReference "swift-algorithms" */,
 			);
 			productRefGroup = 27EE904F2B1E3E25001053A0 /* Products */;
 			projectDirPath = "";
@@ -468,6 +546,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2746B0522B26603500C5A615 /* inputDay8 in Resources */,
+				2787A54B2B2FD07A0003180B /* exampleDay14Packed in Resources */,
 				2746B0532B26603500C5A615 /* exampleDay8 in Resources */,
 				27EE90812B1E3E6E001053A0 /* inputDay3 in Resources */,
 				274FA3652B28AD8D00CBE0F0 /* exampleDay10 in Resources */,
@@ -476,20 +555,26 @@
 				2746B03E2B2614D700C5A615 /* inputDay7 in Resources */,
 				27EE907F2B1E3E5A001053A0 /* exampleDay3 in Resources */,
 				2746B05C2B26678300C5A615 /* exampleDay8-2 in Resources */,
+				276910982B2A6685006DFAD1 /* exampleDay12 in Resources */,
 				278F51912B221C1C00EE69B6 /* exampleDay5 in Resources */,
+				2787A5462B2DE8A80003180B /* exampleDay13 in Resources */,
 				27EE90592B1E3E26001053A0 /* Preview Assets.xcassets in Resources */,
+				2787A5482B2FD05E0003180B /* exampleDay14 in Resources */,
 				2772854B2B222D9100700551 /* inputDay5 in Resources */,
 				274FA3642B28AD8D00CBE0F0 /* inputDay10 in Resources */,
 				27E603C02B20FCB800C4CEC3 /* exampleDay4 in Resources */,
 				27E603B82B20F3FB00C4CEC3 /* inputDay4 in Resources */,
+				2787A5422B2DE7BA0003180B /* inputDay13 in Resources */,
 				277772362B275FCF006702BA /* exampleDay9 in Resources */,
 				274FA3712B29190A00CBE0F0 /* inputDay11 in Resources */,
 				2746B0392B257B7700C5A615 /* exampleDay6 in Resources */,
+				2769109A2B2A6698006DFAD1 /* inputDay12 in Resources */,
 				274FA3722B29190A00CBE0F0 /* exampleDay11 in Resources */,
 				27EE90562B1E3E26001053A0 /* Assets.xcassets in Resources */,
 				2746B0372B257B6800C5A615 /* inputDay6 in Resources */,
 				2746B05E2B2668CB00C5A615 /* exampleDay8-3 in Resources */,
 				277772372B275FCF006702BA /* inputDay9 in Resources */,
+				2787A54F2B2FD7F20003180B /* inputDay14 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -508,6 +593,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2746B0332B2579F900C5A615 /* Quadratic.swift in Sources */,
+				2787A5352B2CD2C40003180B /* SpringMapCalculator.swift in Sources */,
 				27EE90542B1E3E25001053A0 /* ContentView.swift in Sources */,
 				27E603BE2B20FBD800C4CEC3 /* Helpers.swift in Sources */,
 				274FA3692B28AF6300CBE0F0 /* Coordinate.swift in Sources */,
@@ -526,6 +612,8 @@
 				274FA3762B292EA700CBE0F0 /* Matrix2D.swift in Sources */,
 				27E603BC2B20F42C00C4CEC3 /* ScratchCard.swift in Sources */,
 				276703272B2A071B0023B1AF /* MatrixInit.swift in Sources */,
+				2787A5372B2CD8AC0003180B /* Day12View.swift in Sources */,
+				2769109D2B2A66B6006DFAD1 /* SpringMap.swift in Sources */,
 				2767032B2B2A146E0023B1AF /* MatrixColumn.swift in Sources */,
 				274FA3742B29191300CBE0F0 /* GalacticMap.swift in Sources */,
 				2746B0552B2660E700C5A615 /* Node.swift in Sources */,
@@ -539,7 +627,10 @@
 			files = (
 				276703222B29FCAA0023B1AF /* MatrixTests.swift in Sources */,
 				276703292B2A0EE90023B1AF /* Day11.swift in Sources */,
+				2769109F2B2A67F0006DFAD1 /* Day12.swift in Sources */,
+				276910A52B2B8843006DFAD1 /* SpringMapTests.swift in Sources */,
 				278F51962B221EB800EE69B6 /* Day5.swift in Sources */,
+				2787A53F2B2DE7090003180B /* Day13.swift in Sources */,
 				274FA3602B276B6F00CBE0F0 /* Day 9.swift in Sources */,
 				2746B05A2B26641900C5A615 /* Day 8.swift in Sources */,
 				2746B0352B257B2F00C5A615 /* Day6.swift in Sources */,
@@ -551,6 +642,7 @@
 				27EE90642B1E3E26001053A0 /* Days3-4.swift in Sources */,
 				2746B0482B26194E00C5A615 /* CamelCardSorting.swift in Sources */,
 				2767032D2B2A1F8F0023B1AF /* CoordinateTests.swift in Sources */,
+				2787A54D2B2FD08B0003180B /* Day14.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -565,6 +657,116 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		2787A5382B2CEE9A0003180B /* Test */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = s;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Test;
+		};
+		2787A5392B2CEE9A0003180B /* Test */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Advent2023/Advent2023.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Advent2023/Preview Content\"";
+				DEVELOPMENT_TEAM = DF288G8ZJ6;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mmuszynski.Advent2023;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Test;
+		};
+		2787A53A2B2CEE9A0003180B /* Test */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = DF288G8ZJ6;
+				GENERATE_INFOPLIST_FILE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mmuszynski.Advent2023Tests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Advent2023.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Advent2023";
+			};
+			name = Test;
+		};
 		27EE90712B1E3E26001053A0 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -689,6 +891,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Advent2023/Advent2023.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
@@ -716,6 +919,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Advent2023/Advent2023.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
@@ -782,6 +986,7 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				27EE90712B1E3E26001053A0 /* Debug */,
+				2787A5382B2CEE9A0003180B /* Test */,
 				27EE90722B1E3E26001053A0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
@@ -791,6 +996,7 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				27EE90742B1E3E26001053A0 /* Debug */,
+				2787A5392B2CEE9A0003180B /* Test */,
 				27EE90752B1E3E26001053A0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
@@ -800,6 +1006,7 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				27EE90772B1E3E26001053A0 /* Debug */,
+				2787A53A2B2CEE9A0003180B /* Test */,
 				27EE90782B1E3E26001053A0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
@@ -814,10 +1021,26 @@
 		};
 /* End XCLocalSwiftPackageReference section */
 
+/* Begin XCRemoteSwiftPackageReference section */
+		276910A02B2B8601006DFAD1 /* XCRemoteSwiftPackageReference "swift-algorithms" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/apple/swift-algorithms.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.2.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
 /* Begin XCSwiftPackageProductDependency section */
 		274FA35B2B27698F00CBE0F0 /* BundleURL */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = BundleURL;
+		};
+		276910A12B2B8601006DFAD1 /* Algorithms */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 276910A02B2B8601006DFAD1 /* XCRemoteSwiftPackageReference "swift-algorithms" */;
+			productName = Algorithms;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

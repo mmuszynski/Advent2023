@@ -31,11 +31,39 @@ extension MatrixRow: RangeReplaceableCollection {
     }
 }
 
+extension MatrixRow: BidirectionalCollection {
+    func index(before i: Int) -> Int {
+        return elements.index(before: i)
+    }
+}
+
 extension MatrixRow: ExpressibleByArrayLiteral {
     init(arrayLiteral: Element...) {
         self.init()
         for element in arrayLiteral {
             self.append(element)
         }
+    }
+}
+
+extension MatrixRow: Equatable where Element: Equatable {
+    static func == (lhs: MatrixRow<Element>, rhs: MatrixRow<Element>) -> Bool {
+        if lhs.count != rhs.count { return false }
+        for i in 0..<lhs.count {
+            if lhs[i] != rhs[i] { return false }
+        }
+        return true
+    }
+}
+
+//extension MatrixRow: CustomStringConvertible where Element: CustomStringConvertible {
+//    var description: String {
+//        self.elements.map(\.description).joined(separator: ", ")
+//    }
+//}
+
+extension MatrixRow: Hashable where Element: Equatable, Element: Hashable {
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(self.elements)
     }
 }

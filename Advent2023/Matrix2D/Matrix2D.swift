@@ -16,35 +16,28 @@ import Foundation
 struct Matrix2D<Element> {
     typealias RowElement = MatrixRow<Element>
     typealias ColumnElement = MatrixColumn<Element>
-    private var rows: Array<RowElement> = []
+    
+    internal var elements: [Element] = []
+    internal var elementsByColumn: [Element] = []
+    
+    private var rows: Array<RowElement> {
+        precondition(rowCount == 0 || elements.count % rowCount == 0, "Unequal packing of rows. This should not be possible.")
+        return (0..<rowCount).map(getRow)
+    }
+    private func getRow(_ rowIndex: Int) -> RowElement {
+        RowElement(elements[rowIndex * columnCount ..< (rowIndex + 1) * columnCount])
+    }
     
     init(rows: Array<RowElement>) {
         precondition(rows.allSatisfySameCount, "Rows must be of equal length")
         
-        self.rows = rows
+        self.elements = Array(rows.joined())
+        self.rowCount = rows.count
+        self.columnCount = rows.first?.count ?? 0
     }
     
-    var rowCount: Int {
-        self.count
-    }
-    
-    var columnCount: Int {
-        guard !self.isEmpty else { return 0 }
-        return self[0].count
-    }
-    
-    var columns: [ColumnElement] {
-        var columns: [ColumnElement] = []
-        for column in 0..<columnCount {
-            var col: [Element] = []
-            for row in 0..<rowCount {
-                col.append(self[row][column])
-            }
-            
-            columns.append(ColumnElement(elements: col))
-        }
-        return columns
-    }
+    var rowCount: Int = 0
+    var columnCount: Int = 0
     
     func coordinates(where isTrue: (Element) -> Bool) -> [Coordinate] {
         var returnCoords = [Coordinate]()
@@ -76,7 +69,7 @@ struct Matrix2D<Element> {
     
     mutating func insertRow(repeating element: Element, count: Int? = nil, at i: Int) {
         guard let count = count ?? self.rows.first?.count else {
-            precondition(false, "Couldn't get row length automatically and no length was specified")
+            fatalError("Couldn't get row length automatically and no length was specified")
         }
         let newRow = MatrixRow(Array(repeating: element, count: count))
         self.insert(newRow, at: i)
@@ -97,14 +90,36 @@ struct Matrix2D<Element> {
 
 /// Collection Conformance
 extension Matrix2D: RangeReplaceableCollection {
-    init() { }
+    init() { 
+        
+    }
+    
+    mutating func updateRowCount() {
+        if self.columnCount > 0 {
+            self.rowCount = elements.count / self.columnCount
+        } else {
+            self.rowCount = elements.count == 0 ? 0 : 1
+        }
+    }
+    
+    mutating func updateColumnCount() {
+        if self.rowCount > 0 {
+            self.columnCount = elements.count / self.rowCount
+        } else {
+            assert(elements.isEmpty)
+            rowCount = 0
+            columnCount = 0
+        }
+    }
     
     mutating func insert(_ newElement: MatrixRow<Element>, at i: Int) {
         if let length = rows.first?.count, length != newElement.count {
             precondition(false, "Rows must be of equal length. Attempting to insert row of length \(newElement.count). Expected rows of length \(length)")
         }
         
-        rows.insert(newElement, at: i)
+        elements.insert(contentsOf: newElement, at: self.columnCount * i)
+        self.updateRowCount()
+        if self.columnCount == 0 { self.columnCount = newElement.count }
     }
     
     mutating func insert<S>(contentsOf newElements: S, at i: Int) where S : Collection, MatrixRow<Element> == S.Element {
@@ -112,19 +127,36 @@ extension Matrix2D: RangeReplaceableCollection {
             precondition(false, "Rows must be of equal length. Expected rows of length \(length)")
         }
         
-        rows.insert(contentsOf: newElements, at: i)
+        //let rowsToInsert = newElements.count
+        elements.insert(contentsOf: newElements.joined(), at: self.columnCount * i)
+        self.updateRowCount()
+        if self.columnCount == 0 { self.columnCount = newElements.first?.count ?? 0 }
     }
     
     var startIndex: Array<RowElement>.Index { rows.startIndex }
     var endIndex: Array<RowElement>.Index { rows.endIndex }
     subscript(position: Int) -> RowElement {
-        rows[position]
+        get {
+            self.getRow(position)
+        }
+        set {
+            self.replaceSubrange(position..<position+1, with: Array(arrayLiteral: newValue))
+            //rows[position] = newValue
+        }
     }
     func index(after i: Int) -> Array<RowElement>.Index {
         rows.index(after: i)
     }
     mutating func replaceSubrange<C>(_ subrange: Range<Int>, with newElements: C) where C : Collection, MatrixRow<Element> == C.Element {
-        rows.replaceSubrange(subrange, with: newElements)
+        let previousElementsCount = subrange.count
+        let countChange = newElements.count - previousElementsCount
+
+        let newElements = newElements.joined()
+        let rawSubrange = (subrange.lowerBound * self.columnCount)..<(subrange.upperBound * self.columnCount)
+        elements.replaceSubrange(rawSubrange, with: newElements)
+        
+        rowCount += countChange
+        updateRowCount()
     }
 }
 
@@ -166,5 +198,15 @@ extension Matrix2D: CustomStringConvertible, CustomDebugStringConvertible {
             description.append(row.map { "\($0)" }.joined() + "\n")
         }
         return description
+    }
+}
+
+extension Matrix2D: Equatable where Element: Equatable {
+    
+}
+
+extension Matrix2D: Hashable where Element: Equatable, Element: Hashable {
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(self.rows)
     }
 }

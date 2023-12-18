@@ -16,7 +16,7 @@ final class Day11: XCTestCase {
     
     func testExampleDay11() throws {
         let string = try String(contentsOf: example)
-        var universe = GalacticMap(string: string)
+        let universe = GalacticMap(string: string)
         
         print(universe.map)
         

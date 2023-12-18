@@ -38,7 +38,7 @@ final class Day10: XCTestCase {
     
     func testInputDay10Part2() throws {
         let string = try String(contentsOf: input)
-        var map = PipeMap(string: string)
+        let map = PipeMap(string: string)
         var openingMap: [Coordinate : OpeningType] = [:]
 
         let loop = map.walkLoop(from: map.startingLocation!)
