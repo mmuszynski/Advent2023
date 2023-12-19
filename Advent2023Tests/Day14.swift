@@ -181,7 +181,7 @@ final class Day14: XCTestCase {
         
         let map = maps[0]
         
-        XCTAssertEqual(computeValue(for: map), 64)
+        XCTAssertEqual(computeValue(for: map), 90982)
     }
     
     func computeValue(for map: Matrix2D<String>, loops max: Int = 1000000000) -> Int {
@@ -237,27 +237,19 @@ final class Day14: XCTestCase {
     
     func packMap(_ map: inout Matrix2D<String>, inDirection direction: Int) {
         switch direction {
-        case 0:
+        case 0, 2:
             //up
-            for (offset, column) in map.columns.enumerated() {
-                map.replaceColumn(at: offset, with: packColumn(column))
+            var columns = [MatrixColumn<String>]()
+            for column in map.columns {
+                columns.append(packColumn(column, ascending: direction == 0))
             }
+            map = Matrix2D(columns: columns)
             //print(map)
-        case 1:
+        case 1, 3:
             for (offset, row) in map.enumerated() {
-                map[offset] = packRow(row)
+                map[offset] = packRow(row, ascending: direction == 1)
             }
             break
-        case 2:
-            //down
-            for (offset, column) in map.columns.enumerated() {
-                map.replaceColumn(at: offset, with: packColumn(column, ascending: false))
-            }
-        case 3:
-            //right
-            for (offset, row) in map.enumerated() {
-                map[offset] = packRow(row, ascending: false)
-            }
         default:
             fatalError()
         }

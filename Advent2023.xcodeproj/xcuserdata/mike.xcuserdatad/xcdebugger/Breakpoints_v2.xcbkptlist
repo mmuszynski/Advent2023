@@ -14,28 +14,28 @@
             filePath = "Advent2023/Matrix2D/Matrix2D.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "171"
-            endingLineNumber = "171"
+            startingLineNumber = "143"
+            endingLineNumber = "143"
             landmarkName = "init(arrayLiteral:)"
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "9476F52B-912A-4DBD-96B5-B41C2B900100 - 27e91ae6969f54d8"
+                  uuid = "9476F52B-912A-4DBD-96B5-B41C2B900100 - 472296631dfd3ec6"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "Advent2023.Matrix2D.init(arrayLiteral: Advent2023.MatrixRow&lt;&#x3c4;_0_0&gt;...) -&gt; Advent2023.Matrix2D&lt;&#x3c4;_0_0&gt;"
+                  symbolName = "Advent2023.Matrix2D.insert&lt;&#x3c4;_0_0 where &#x3c4;_1_0: Swift.Collection, &#x3c4;_1_0.Element == Advent2023.MatrixRow&lt;&#x3c4;_0_0&gt;&gt;(contentsOf: &#x3c4;_1_0, at: Swift.Int) -&gt; ()"
                   moduleName = "Advent2023"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/mike/Desktop/Advent2023/Advent2023/Matrix2D/Matrix2D.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "168"
-                  endingLineNumber = "168"
-                  offsetFromSymbolStart = "60">
+                  startingLineNumber = "131"
+                  endingLineNumber = "131"
+                  offsetFromSymbolStart = "1764">
                </Location>
                <Location
-                  uuid = "9476F52B-912A-4DBD-96B5-B41C2B900100 - 27e91ae6969f54f9"
+                  uuid = "9476F52B-912A-4DBD-96B5-B41C2B900100 - 27e91ae6969f519f"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -45,12 +45,12 @@
                   urlString = "file:///Users/mike/Desktop/Advent2023/Advent2023/Matrix2D/Matrix2D.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "169"
-                  endingLineNumber = "169"
-                  offsetFromSymbolStart = "72">
+                  startingLineNumber = "131"
+                  endingLineNumber = "131"
+                  offsetFromSymbolStart = "64">
                </Location>
                <Location
-                  uuid = "9476F52B-912A-4DBD-96B5-B41C2B900100 - 27e91ae6969f54b7"
+                  uuid = "9476F52B-912A-4DBD-96B5-B41C2B900100 - 27e91ae6969f519f"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -60,9 +60,39 @@
                   urlString = "file:///Users/mike/Desktop/Advent2023/Advent2023/Matrix2D/Matrix2D.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "171"
-                  endingLineNumber = "171"
-                  offsetFromSymbolStart = "72">
+                  startingLineNumber = "131"
+                  endingLineNumber = "131"
+                  offsetFromSymbolStart = "16">
+               </Location>
+               <Location
+                  uuid = "9476F52B-912A-4DBD-96B5-B41C2B900100 - 27e91ae6969f5055"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Advent2023.Matrix2D.init(arrayLiteral: Advent2023.MatrixRow&lt;&#x3c4;_0_0&gt;...) -&gt; Advent2023.Matrix2D&lt;&#x3c4;_0_0&gt;"
+                  moduleName = "Advent2023"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mike/Desktop/Advent2023/Advent2023/Matrix2D/Matrix2D.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "141"
+                  endingLineNumber = "141"
+                  offsetFromSymbolStart = "64">
+               </Location>
+               <Location
+                  uuid = "9476F52B-912A-4DBD-96B5-B41C2B900100 - 27e91ae6969f5013"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Advent2023.Matrix2D.init(arrayLiteral: Advent2023.MatrixRow&lt;&#x3c4;_0_0&gt;...) -&gt; Advent2023.Matrix2D&lt;&#x3c4;_0_0&gt;"
+                  moduleName = "Advent2023"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mike/Desktop/Advent2023/Advent2023/Matrix2D/Matrix2D.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "143"
+                  endingLineNumber = "143"
+                  offsetFromSymbolStart = "64">
                </Location>
             </Locations>
          </BreakpointContent>

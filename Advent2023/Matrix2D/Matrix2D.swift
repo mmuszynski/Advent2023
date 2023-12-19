@@ -16,28 +16,34 @@ import Foundation
 struct Matrix2D<Element> {
     typealias RowElement = MatrixRow<Element>
     typealias ColumnElement = MatrixColumn<Element>
-    
-    internal var elements: [Element] = []
-    internal var elementsByColumn: [Element] = []
-    
-    private var rows: Array<RowElement> {
-        precondition(rowCount == 0 || elements.count % rowCount == 0, "Unequal packing of rows. This should not be possible.")
-        return (0..<rowCount).map(getRow)
-    }
-    private func getRow(_ rowIndex: Int) -> RowElement {
-        RowElement(elements[rowIndex * columnCount ..< (rowIndex + 1) * columnCount])
-    }
+    private var rows: Array<RowElement> = []
     
     init(rows: Array<RowElement>) {
         precondition(rows.allSatisfySameCount, "Rows must be of equal length")
         
-        self.elements = Array(rows.joined())
-        self.rowCount = rows.count
-        self.columnCount = rows.first?.count ?? 0
+        self.rows = rows
     }
     
-    var rowCount: Int = 0
-    var columnCount: Int = 0
+    init(columns: Array<ColumnElement>) {
+        precondition(columns.allSatisfySameCount, "Columns must be of equal length")
+        
+        var rows = [[Element]](repeating: [], count: columns.first?.count ?? 0)
+        for (_, column) in columns.enumerated() {
+            for (rowIndex, element) in column.enumerated() {
+                rows[rowIndex].append(element)
+            }
+        }
+        self.init(rows: rows.map(RowElement.init))
+    }
+    
+    var rowCount: Int {
+        self.count
+    }
+    
+    var columnCount: Int {
+        guard !self.isEmpty else { return 0 }
+        return self[0].count
+    }
     
     func coordinates(where isTrue: (Element) -> Bool) -> [Coordinate] {
         var returnCoords = [Coordinate]()
@@ -90,36 +96,14 @@ struct Matrix2D<Element> {
 
 /// Collection Conformance
 extension Matrix2D: RangeReplaceableCollection {
-    init() { 
-        
-    }
-    
-    mutating func updateRowCount() {
-        if self.columnCount > 0 {
-            self.rowCount = elements.count / self.columnCount
-        } else {
-            self.rowCount = elements.count == 0 ? 0 : 1
-        }
-    }
-    
-    mutating func updateColumnCount() {
-        if self.rowCount > 0 {
-            self.columnCount = elements.count / self.rowCount
-        } else {
-            assert(elements.isEmpty)
-            rowCount = 0
-            columnCount = 0
-        }
-    }
+    init() { }
     
     mutating func insert(_ newElement: MatrixRow<Element>, at i: Int) {
         if let length = rows.first?.count, length != newElement.count {
             precondition(false, "Rows must be of equal length. Attempting to insert row of length \(newElement.count). Expected rows of length \(length)")
         }
         
-        elements.insert(contentsOf: newElement, at: self.columnCount * i)
-        self.updateRowCount()
-        if self.columnCount == 0 { self.columnCount = newElement.count }
+        rows.insert(newElement, at: i)
     }
     
     mutating func insert<S>(contentsOf newElements: S, at i: Int) where S : Collection, MatrixRow<Element> == S.Element {
@@ -127,36 +111,24 @@ extension Matrix2D: RangeReplaceableCollection {
             precondition(false, "Rows must be of equal length. Expected rows of length \(length)")
         }
         
-        //let rowsToInsert = newElements.count
-        elements.insert(contentsOf: newElements.joined(), at: self.columnCount * i)
-        self.updateRowCount()
-        if self.columnCount == 0 { self.columnCount = newElements.first?.count ?? 0 }
+        rows.insert(contentsOf: newElements, at: i)
     }
     
     var startIndex: Array<RowElement>.Index { rows.startIndex }
     var endIndex: Array<RowElement>.Index { rows.endIndex }
     subscript(position: Int) -> RowElement {
         get {
-            self.getRow(position)
+            rows[position]
         }
         set {
-            self.replaceSubrange(position..<position+1, with: Array(arrayLiteral: newValue))
-            //rows[position] = newValue
+            rows[position] = newValue
         }
     }
     func index(after i: Int) -> Array<RowElement>.Index {
         rows.index(after: i)
     }
     mutating func replaceSubrange<C>(_ subrange: Range<Int>, with newElements: C) where C : Collection, MatrixRow<Element> == C.Element {
-        let previousElementsCount = subrange.count
-        let countChange = newElements.count - previousElementsCount
-
-        let newElements = newElements.joined()
-        let rawSubrange = (subrange.lowerBound * self.columnCount)..<(subrange.upperBound * self.columnCount)
-        elements.replaceSubrange(rawSubrange, with: newElements)
-        
-        rowCount += countChange
-        updateRowCount()
+        rows.replaceSubrange(subrange, with: newElements)
     }
 }
 

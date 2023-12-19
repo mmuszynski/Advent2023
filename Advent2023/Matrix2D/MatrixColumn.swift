@@ -63,43 +63,30 @@ extension Matrix2D {
 }
 
 extension Matrix2D {
-    func rawElementIndices(from index: Int) -> [Int] {
-        (0..<self.rowCount).map { $0 * self.rowCount + index }
-    }
-    
     mutating func insertColumn(_ column: MatrixColumn<Element>, at index: Int) {
-        precondition(columns.isEmpty || column.count == self.rowCount, "Tried to insert a column with an unequal number of elements")
+        precondition(columns.isEmpty || column.count == columns.first!.count, "Tried to insert a column with an unequal number of elements")
         
-        let insertionPoints = rawElementIndices(from: index)
-
-        for i in (0..<column.count).reversed() {
-            self.elements.insert(column[i], at: insertionPoints[i])
+        for i in 0..<column.count {
+            var newRow = self[i]
+            newRow.insert(column[i], at: index)
+            self[i] = newRow
         }
-        
-        self.columnCount += 1
-        self.updateRowCount()
     }
     
     mutating func replaceColumn(at index: Int, with newColumn: MatrixColumn<Element>) {
-        precondition(columns.isEmpty || newColumn.count == rowCount, "Tried to insert a column with an unequal number of elements")
+        precondition(columns.isEmpty || newColumn.count == columns.first!.count, "Tried to insert a column with an unequal number of elements")
         precondition(index < columnCount, "Index out of range")
         
-        let replacementPoints = rawElementIndices(from: index)
-        
-        for i in 0..<replacementPoints.count {
-            self.elements[replacementPoints[i]] = newColumn[i]
+        for i in 0..<newColumn.count {
+            var newRow = self[i]
+            newRow[index] = newColumn[i]
+            self[i] = newRow
         }
-        
-        //no size updating necessary
     }
     
     mutating func removeColumn(at index: Int) {
-        let removalIndices = rawElementIndices(from: index)
-        for i in removalIndices.reversed() {
-            self.elements.remove(at: i)
+        for i in 0..<self.rowCount {
+            self[i].remove(at: i)
         }
-        
-        columnCount -= 1
-        updateRowCount()
     }
 }
