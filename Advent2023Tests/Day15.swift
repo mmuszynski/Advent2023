@@ -9,8 +9,6 @@ import XCTest
 @testable import Advent2023
 import BundleURL
 
-let input = #bundleURL("inputDay15")!
-let example = #bundleURL("exampleDay15")!
 
 extension String {
     var reindeerHash: Int {
@@ -50,6 +48,10 @@ extension Array where Element == Lens {
 }
 
 final class Day15: XCTestCase {
+    
+    let input = #bundleURL("inputDay15")!
+    let example = #bundleURL("exampleDay15")!
+
     
     func testHash() {
         let string = "HASH"

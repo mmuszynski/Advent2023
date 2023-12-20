@@ -29,6 +29,10 @@ public struct Coordinate: Hashable, ExpressibleByStringLiteral {
         }
     }
     
+    var flipped: Coordinate {
+        Coordinate(x: -self.x, y: -self.y)
+    }
+    
     public init(x: Int, y: Int) {
         self.x = x
         self.y = y
