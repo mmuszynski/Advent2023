@@ -9,88 +9,10 @@ import XCTest
 @testable import Advent2023
 import BundleURL
 
-enum Direction: Coordinate {
-    case up = "0,-1"
-    case right = "1,0"
-    case down = "0,1"
-    case left = "-1,0"
-    
-    var opposite: Direction {
-        Direction(rawValue: self.rawValue.flipped)!
-    }
-}
-
-extension Coordinate {
-    func nextCoordinateIn(direction: Direction) -> Coordinate {
-        self + direction.rawValue
-    }
-}
-
-enum MirrorType: Character {
-    case empty = "."
-    case reflectorBackslash = "\\"
-    case reflectorSlash = "/"
-    case splitterHorizontal = "-"
-    case splitterVertical = "|"
-    
-    func nextDirectionsMoving(_ previousDirection: Direction) -> [Direction] {
-        switch self {
-        case .empty:
-            return [previousDirection]
-        case .reflectorBackslash:
-            switch previousDirection {
-            case .up:
-                return [.left]
-            case .down:
-                return [.right]
-            case .left:
-                return [.up]
-            case .right:
-                return [.down]
-            }
-        case .reflectorSlash:
-            switch previousDirection {
-            case .up:
-                return [.right]
-            case .right:
-                return [.up]
-            case .down:
-                return [.left]
-            case .left:
-                return [.down]
-            }
-        case .splitterHorizontal:
-            switch previousDirection {
-            case .up, .down:
-                return [.left, .right]
-            case .left, .right:
-                return [previousDirection]
-            }
-        case .splitterVertical:
-            switch previousDirection {
-            case .up, .down:
-                return [previousDirection]
-            case .left, .right:
-                return [.up, .down]
-            }
-        }
-    }
-}
-
 final class Day16: XCTestCase {
     
     let input = #bundleURL("inputDay16")!
     let example = #bundleURL("exampleDay16")!
-    
-    struct LightPulse: Hashable {
-        var coordinate: Coordinate
-        var direction: Direction
-        
-        init(_ coordinate: Coordinate, _ direction: Direction) {
-            self.coordinate = coordinate
-            self.direction = direction
-        }
-    }
     
     var history: Set<LightPulse> = []
     
@@ -99,7 +21,7 @@ final class Day16: XCTestCase {
         history.insert(.init(Coordinate(x: 0, y: 0), .right))
     }
     
-    func process(_ lightPulses: [LightPulse], in mirrors: Matrix2D<MirrorType>) -> [LightPulse] {
+    func process(_ lightPulses: [LightPulse], in mirrors: Matrix2D<ReflectorType>) -> [LightPulse] {
         if lightPulses.isEmpty { return [] }
         
         print(lightPulses)
@@ -107,7 +29,7 @@ final class Day16: XCTestCase {
         var pulses = lightPulses
         var outputPulses: [LightPulse] = []
         while let pulse = pulses.popLast() {
-            let position = pulse.coordinate + pulse.direction.rawValue
+            let position = pulse.coordinate + pulse.direction
             
             guard   (0..<mirrors.rowCount).contains(position.row) &&
                     (0..<mirrors.columnCount).contains(position.col)
@@ -135,10 +57,10 @@ final class Day16: XCTestCase {
         """
         
         let mirrorMatrix =  Matrix2D(string: string) { line in
-            line.compactMap(MirrorType.init)
+            line.compactMap(ReflectorType.init)
         }
         
-        let lightPulses: [LightPulse] = [.init(Coordinate(row: 0, col: 0), Direction.right)]
+        let lightPulses: [LightPulse] = [.init(Coordinate(row: 0, col: 0), .right)]
         let _ = process(lightPulses, in: mirrorMatrix)
         XCTAssertEqual(history.count, 3)
     }
@@ -151,10 +73,10 @@ final class Day16: XCTestCase {
         """
         
         let mirrorMatrix =  Matrix2D(string: string) { line in
-            line.compactMap(MirrorType.init)
+            line.compactMap(ReflectorType.init)
         }
         
-        let lightPulses: [LightPulse] = [.init(Coordinate(row: 0, col: 0), Direction.right)]
+        let lightPulses: [LightPulse] = [.init(Coordinate(row: 0, col: 0), .right)]
         let _ = process(lightPulses, in: mirrorMatrix)
         XCTAssertEqual(history.count, 5)
     }
@@ -167,10 +89,10 @@ final class Day16: XCTestCase {
         """
         
         let mirrorMatrix =  Matrix2D(string: string) { line in
-            line.compactMap(MirrorType.init)
+            line.compactMap(ReflectorType.init)
         }
         
-        let lightPulses: [LightPulse] = [.init(Coordinate(row: 0, col: 0), Direction.right)]
+        let lightPulses: [LightPulse] = [.init(Coordinate(row: 0, col: 0), .right)]
         let _ = process(lightPulses, in: mirrorMatrix)
         XCTAssertEqual(Set(history.map(\.coordinate)).count, 4)
     }
@@ -183,10 +105,10 @@ final class Day16: XCTestCase {
         """
         
         let mirrorMatrix =  Matrix2D(string: string) { line in
-            line.compactMap(MirrorType.init)
+            line.compactMap(ReflectorType.init)
         }
         
-        let lightPulses: [LightPulse] = [.init(Coordinate(row: 0, col: 0), Direction.right)]
+        let lightPulses: [LightPulse] = [.init(Coordinate(row: 0, col: 0), .right)]
         let _ = process(lightPulses, in: mirrorMatrix)
         XCTAssertEqual(Set(history.map(\.coordinate)).count, 5)
     }
@@ -200,10 +122,10 @@ final class Day16: XCTestCase {
         """
         
         let mirrorMatrix =  Matrix2D(string: string) { line in
-            line.compactMap(MirrorType.init)
+            line.compactMap(ReflectorType.init)
         }
         
-        let lightPulses: [LightPulse] = [.init(Coordinate(row: 0, col: 0), Direction.right)]
+        let lightPulses: [LightPulse] = [.init(Coordinate(row: 0, col: 0), .right)]
         let _ = process(lightPulses, in: mirrorMatrix)
         XCTAssertEqual(Set(history.map(\.coordinate)).count, 12)
     }
@@ -211,24 +133,27 @@ final class Day16: XCTestCase {
     func testExampleDay16() throws {
         let string = try String(contentsOf: example)
         let mirrorMatrix = Matrix2D(string: string) { line in
-            line.compactMap(MirrorType.init)
+            line.compactMap(ReflectorType.init)
         }
         
-        var lightPulses: [LightPulse] = [.init(Coordinate(row: 0, col: 0), Direction.right)]
+        var lightPulses: [LightPulse] = [.init(Coordinate(row: 0, col: 0), .right)]
         lightPulses = process(lightPulses, in: mirrorMatrix)
         
         XCTAssertEqual(Set(history.map(\.coordinate)).count, 46)
     }
     
     func testInputDay16() throws {
-        let string = try String(contentsOf: input)
-        let mirrorMatrix = Matrix2D(string: string) { line in
-            line.compactMap(MirrorType.init)
-        }
+        let controller = ReflectorMapController(url: input)
+        controller.reset(starting: LightPulse(Coordinate(row: 0, col: -1), .right))
+        controller.solve()
         
-        var lightPulses: [LightPulse] = [.init(Coordinate(row: 0, col: 0), Direction.right)]
-        lightPulses = process(lightPulses, in: mirrorMatrix)
+        XCTAssertEqual(Set(controller.history.reduce([],+).map(\.coordinate).filter({ $0.x >= 0 && $0.y >= 0 })).count, 7034)
+    }
+    
+    func testInputDay16Part2() throws {
+        let controller = ReflectorMapController(url: input)
+        controller.solvePartTwo()
         
-        XCTAssertEqual(history.count, 46)
+        XCTAssertEqual(controller.best, 7759)
     }
 }

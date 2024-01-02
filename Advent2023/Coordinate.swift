@@ -7,7 +7,7 @@
 
 import Foundation
 
-public struct Coordinate: Hashable, ExpressibleByStringLiteral {
+public struct Coordinate: Hashable, ExpressibleByStringLiteral, Sendable {
     public var x: Int
     public var y: Int
     
@@ -73,4 +73,38 @@ extension Coordinate: AdditiveArithmetic {
     public static func - (lhs: Coordinate, rhs: Coordinate) -> Coordinate {
         Coordinate(x: lhs.x - rhs.x, y: lhs.y - rhs.y)
     }
+}
+
+/// Allows for addition of direction
+extension Coordinate {
+    static prefix func - (coordinate: Coordinate) -> Coordinate {
+        return coordinate.flipped
+    }
+}
+
+extension Coordinate: CustomStringConvertible {
+    public var description: String {
+        "{ \(x), \(y) }"
+    }
+}
+
+extension Coordinate {
+    static let up: Coordinate = "0,-1"
+    static let right: Coordinate = "1,0"
+    static let down: Coordinate = "0,1"
+    static let left: Coordinate = "-1,0"
+    
+    static let north: Coordinate = .up
+    static let east: Coordinate = .right
+    static let south: Coordinate = .down
+    static let west: Coordinate = .left
+    
+    static let northEast: Coordinate = .north + .east
+    static let southEast: Coordinate = .south + .east
+    static let southWest: Coordinate = .south + .west
+    static let northWest: Coordinate = .north + .west
+
+    static let cardinalDirections: [Coordinate] = [.up, .right, .left, .down]
+    static let intermediateDirections: [Coordinate] = [.northEast, .southEast, .southWest, .northWest]
+    static let cardinalAndIntermediateDirections: [Coordinate] = cardinalDirections + intermediateDirections
 }
