@@ -8,7 +8,7 @@
 import Foundation
 
 protocol Graph {
-    associatedtype Node: Equatable & Hashable
+    associatedtype Node: Comparable & Hashable
     associatedtype EdgeType: Edge & Equatable
     
     /// The structure of the graph. Nodes are keys to a dictionary that contains their edges
@@ -45,9 +45,14 @@ extension Graph {
             edges.remove(at: index)
         }
     }
+    
+    func neighbors(of node: Node) -> [Node] {
+        let neighbors = structure[node.hashValue]?.map(\.destination).compactMap { nodeLookup[$0] } ?? []
+        return neighbors
+    }
 }
 
-struct DirectionalGraph<Node: Equatable & Hashable>: Graph {
+struct DirectionalGraph<Node: Comparable & Hashable>: Graph {
     typealias Node = Node
     
     var nodes: Set<Node> = []

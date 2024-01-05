@@ -56,6 +56,9 @@
 		276910A22B2B8601006DFAD1 /* Algorithms in Frameworks */ = {isa = PBXBuildFile; productRef = 276910A12B2B8601006DFAD1 /* Algorithms */; };
 		276910A52B2B8843006DFAD1 /* SpringMapTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 276910A42B2B8843006DFAD1 /* SpringMapTests.swift */; };
 		276DA2C22B4460CF008921CF /* GraphDepthFirstSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 276DA2C12B4460CF008921CF /* GraphDepthFirstSearch.swift */; };
+		276DA2C42B4487FD008921CF /* GraphAStar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 276DA2C32B4487FD008921CF /* GraphAStar.swift */; };
+		276DA2CA2B44C4E4008921CF /* Heap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 276DA2C92B44C4E4008921CF /* Heap.swift */; };
+		276DA2CC2B44C6EA008921CF /* HeapTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 276DA2CB2B44C6EA008921CF /* HeapTests.swift */; };
 		2772854B2B222D9100700551 /* inputDay5 in Resources */ = {isa = PBXBuildFile; fileRef = 278F51922B221CA200EE69B6 /* inputDay5 */; };
 		277772362B275FCF006702BA /* exampleDay9 in Resources */ = {isa = PBXBuildFile; fileRef = 277772312B275FCF006702BA /* exampleDay9 */; };
 		277772372B275FCF006702BA /* inputDay9 in Resources */ = {isa = PBXBuildFile; fileRef = 277772322B275FCF006702BA /* inputDay9 */; };
@@ -156,6 +159,9 @@
 		2769109E2B2A67F0006DFAD1 /* Day12.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day12.swift; sourceTree = "<group>"; };
 		276910A42B2B8843006DFAD1 /* SpringMapTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpringMapTests.swift; sourceTree = "<group>"; };
 		276DA2C12B4460CF008921CF /* GraphDepthFirstSearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphDepthFirstSearch.swift; sourceTree = "<group>"; };
+		276DA2C32B4487FD008921CF /* GraphAStar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphAStar.swift; sourceTree = "<group>"; };
+		276DA2C92B44C4E4008921CF /* Heap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Heap.swift; sourceTree = "<group>"; };
+		276DA2CB2B44C6EA008921CF /* HeapTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeapTests.swift; sourceTree = "<group>"; };
 		277772312B275FCF006702BA /* exampleDay9 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = exampleDay9; sourceTree = "<group>"; };
 		277772322B275FCF006702BA /* inputDay9 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = inputDay9; sourceTree = "<group>"; };
 		2787A5342B2CD2C40003180B /* SpringMapCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpringMapCalculator.swift; sourceTree = "<group>"; };
@@ -491,6 +497,7 @@
 			isa = PBXGroup;
 			children = (
 				276703212B29FCAA0023B1AF /* MatrixTests.swift */,
+				276DA2CB2B44C6EA008921CF /* HeapTests.swift */,
 				2767032C2B2A1F8F0023B1AF /* CoordinateTests.swift */,
 				27EE90632B1E3E26001053A0 /* Days3-4.swift */,
 				274FA35E2B276B5200CBE0F0 /* Day 5 */,
@@ -515,6 +522,8 @@
 				27F91A362B3F310600DCB6E3 /* Graph.swift */,
 				27F91A3A2B3F311700DCB6E3 /* Edge.swift */,
 				276DA2C12B4460CF008921CF /* GraphDepthFirstSearch.swift */,
+				276DA2C32B4487FD008921CF /* GraphAStar.swift */,
+				276DA2C92B44C4E4008921CF /* Heap.swift */,
 			);
 			path = Graph;
 			sourceTree = "<group>";
@@ -674,6 +683,7 @@
 				27F5AD952B227D8A003AFB30 /* RangeComparisons.swift in Sources */,
 				272FD5B62B3E5FA5000ED81F /* LightPulse.swift in Sources */,
 				278F51992B22217000EE69B6 /* Almanac.swift in Sources */,
+				276DA2C42B4487FD008921CF /* GraphAStar.swift in Sources */,
 				27EE90522B1E3E25001053A0 /* Advent2023App.swift in Sources */,
 				274FA3782B2942ED00CBE0F0 /* PipeSegmentView.swift in Sources */,
 				2746B04C2B2635B500C5A615 /* CamelCardBid.swift in Sources */,
@@ -691,6 +701,7 @@
 				274FA3742B29191300CBE0F0 /* GalacticMap.swift in Sources */,
 				2746B0552B2660E700C5A615 /* Node.swift in Sources */,
 				274FA37A2B2946D000CBE0F0 /* PipeMapView.swift in Sources */,
+				276DA2CA2B44C4E4008921CF /* Heap.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -711,6 +722,7 @@
 				2746B0582B2661B400C5A615 /* NodeTests.swift in Sources */,
 				27B361A22B32377800A0B4EC /* Day16.swift in Sources */,
 				27F5AD972B227EA0003AFB30 /* RangeComparisonTests.swift in Sources */,
+				276DA2CC2B44C6EA008921CF /* HeapTests.swift in Sources */,
 				274FA36B2B28BA8E00CBE0F0 /* Day10.swift in Sources */,
 				2746B0302B24A4FA00C5A615 /* GardenRangeTests.swift in Sources */,
 				27EE90642B1E3E26001053A0 /* Days3-4.swift in Sources */,

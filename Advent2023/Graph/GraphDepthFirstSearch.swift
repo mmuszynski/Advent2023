@@ -8,20 +8,21 @@
 import Foundation
 
 extension Graph {
-    func depthFirstSearch(start initialNode: Node) {
+    func depthFirstSearch(start initialNode: Node) -> Set<Node> {
         var frontier: Array<Node> = [initialNode]
         var visited: [Node : Bool] = [:]
         
         while !frontier.isEmpty {
             let node = frontier.removeFirst()
             visited[node] = true
-            
-            let neighbors = structure[node.hashValue]?.map(\.destination) ?? []
-            let neighborNodes = neighbors.compactMap { nodeLookup[$0] }
-            let unvisitedNeighbors = neighborNodes.filter { visited[$0] != true }
+
+            let neighbors = self.neighbors(of: node)
+            let unvisitedNeighbors = neighbors.filter { visited[$0] != true }
             
             frontier.append(contentsOf: unvisitedNeighbors)
             unvisitedNeighbors.forEach { visited[$0] = true }
         }
+        
+        return Set(visited.keys)
     }
 }
