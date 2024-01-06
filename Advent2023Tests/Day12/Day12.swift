@@ -16,15 +16,15 @@ final class Day12: XCTestCase {
     
     var calculator: SpringMapCalculator = SpringMapCalculator()
     
-    func testNaiveExampleDay12() throws {
-        let string = try String(contentsOf: example).separatedByLine
-        
-        let maps = string
-            .map(SpringMap.init)
-            .map(\.validCombinations)
-        
-        XCTAssertEqual(maps.map(\.count).sum, 21)
-    }
+//    func testNaiveExampleDay12() throws {
+//        let string = try String(contentsOf: example).separatedByLine
+//        
+//        let maps = string
+//            .map(SpringMap.init)
+//            .map(\.validCombinations)
+//        
+//        XCTAssertEqual(maps.map(\.count).sum, 21)
+//    }
     
     func testCountNoneAvailable() {
         XCTAssertEqual(calculator.count("#?", blocks: [3]), 0)

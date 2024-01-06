@@ -31,13 +31,7 @@ final class Day16: XCTestCase {
         while let pulse = pulses.popLast() {
             let position = pulse.coordinate + pulse.direction
             
-            guard   (0..<mirrors.rowCount).contains(position.row) &&
-                    (0..<mirrors.columnCount).contains(position.col)
-            else {
-                continue
-            }
-            
-            let mirror = mirrors.element(at: position)
+            guard let mirror = mirrors.element(at: position) else { continue }
             let newPulses = mirror.nextDirectionsMoving(pulse.direction).map { direction in
                 LightPulse(position, direction)
             }

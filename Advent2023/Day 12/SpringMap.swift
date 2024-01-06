@@ -6,7 +6,6 @@
 //
 
 import Foundation
-import Algorithms
 
 struct SpringMap {
     enum Status: Character, ExpressibleByStringLiteral {
@@ -31,9 +30,9 @@ struct SpringMap {
         self.groups = groups        
     }
     
-    var validCombinations: [SpringStatusRow] {
-        status.allCombinations.filter { $0.satsfies(groups) }
-    }
+//    var validCombinations: [SpringStatusRow] {
+//        status.allCombinations.filter { $0.satsfies(groups) }
+//    }
 }
 
 struct SpringStatusRow {
@@ -55,28 +54,28 @@ struct SpringStatusRow {
         self.description.components(separatedBy: ".").map(\.count).filter({$0 != 0}) == groups
     }
     
-    var allCombinations: [SpringStatusRow] {
-        let unknowns = self.enumerated().filter { $0.element == .unknown }.map(\.offset)
-        var combinations = [SpringStatusRow]()
-        
-        guard self.contains(.unknown) else { return [self] }
-        
-        for count in 0..<unknowns.count+1 {
-            for combination in unknowns.combinations(ofCount: count) {
-                combinations.append(
-                    SpringStatusRow(self.enumerated().map { (offset, status) in
-                        if status == .unknown {
-                            return combination.contains(offset) ? SpringMap.Status.operational : .broken
-                        }
-                        return status
-                    })
-                )
-                
-            }
-        }
-        
-        return combinations
-    }
+//    var allCombinations: [SpringStatusRow] {
+//        let unknowns = self.enumerated().filter { $0.element == .unknown }.map(\.offset)
+//        var combinations = [SpringStatusRow]()
+//        
+//        guard self.contains(.unknown) else { return [self] }
+//        
+//        for count in 0..<unknowns.count+1 {
+//            for combination in unknowns.combinations(ofCount: count) {
+//                combinations.append(
+//                    SpringStatusRow(self.enumerated().map { (offset, status) in
+//                        if status == .unknown {
+//                            return combination.contains(offset) ? SpringMap.Status.operational : .broken
+//                        }
+//                        return status
+//                    })
+//                )
+//                
+//            }
+//        }
+//        
+//        return combinations
+//    }
 }
 
 extension SpringStatusRow: Collection {

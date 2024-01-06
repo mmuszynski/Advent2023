@@ -116,12 +116,9 @@ class ReflectorMapController: ObservableObject {
         while let pulse = pulses.popLast() {
             let position = pulse.coordinate + pulse.direction
             
-            guard   (0..<rowCount).contains(position.row) && (0..<columnCount).contains(position.col)
-            else {
+            guard let reflector = reflectorMap.element(at: position) else {
                 continue
             }
-            
-            let reflector = reflectorMap.element(at: position)
             let newPulses = reflector.nextDirectionsMoving(pulse.direction).map { direction in
                 LightPulse(position, direction)
             }

@@ -89,7 +89,9 @@ struct Matrix2D<Element> {
         self = Matrix2D(rows: rows)
     }
     
-    func element(at coordinate: Coordinate) -> Element {
+    func element(at coordinate: Coordinate) -> Element? {
+        guard (0..<rowCount).contains(coordinate.row) else { return nil }
+        guard (0..<columnCount).contains(coordinate.col) else { return nil }
         return self[coordinate.row][coordinate.col]
     }
 }

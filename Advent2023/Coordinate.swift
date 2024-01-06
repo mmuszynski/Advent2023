@@ -84,7 +84,7 @@ extension Coordinate {
 
 extension Coordinate: CustomStringConvertible {
     public var description: String {
-        "{ \(x), \(y) }"
+        "{ \(row), \(col) }"
     }
 }
 

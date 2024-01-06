@@ -62,22 +62,22 @@ struct GalacticMap {
         
         while first.x < second.x {
             first = first.advancing(x: 1, y: 0)
-            accum += value(from: self.map.element(at: first))
+            accum += value(from: self.map.element(at: first)!)
         }
         
         while first.y < second.y {
             first = first.advancing(x: 0, y: 1)
-            accum += value(from: self.map.element(at: first))
+            accum += value(from: self.map.element(at: first)!)
         }
         
         while second.x < first.x {
             first = first.advancing(x: -1, y: 0)
-            accum += value(from: self.map.element(at: first))
+            accum += value(from: self.map.element(at: first)!)
         }
         
         while second.y < first.y {
             first = first.advancing(x: 0, y: -1)
-            accum += value(from: self.map.element(at: first))
+            accum += value(from: self.map.element(at: first)!)
         }
         
         return accum
