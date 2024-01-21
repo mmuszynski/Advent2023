@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Coordinate
 
 /// Enough problems in the AdventOfCode2023 have required a two-dimensional map
 /// Seems like it might be useful in the future
@@ -17,6 +18,11 @@ struct Matrix2D<Element> {
     typealias RowElement = MatrixRow<Element>
     typealias ColumnElement = MatrixColumn<Element>
     private var rows: Array<RowElement> = []
+    
+    init(repeating element: Element, rows: Int, cols: Int) {
+        let row = RowElement(repeating: element, count: cols)
+        self.rows = Array(repeating: row, count: rows)
+    }
     
     init(rows: Array<RowElement>) {
         precondition(rows.allSatisfySameCount, "Rows must be of equal length")
@@ -93,6 +99,12 @@ struct Matrix2D<Element> {
         guard (0..<rowCount).contains(coordinate.row) else { return nil }
         guard (0..<columnCount).contains(coordinate.col) else { return nil }
         return self[coordinate.row][coordinate.col]
+    }
+    
+    mutating func set(element: Element, at coordinate: Coordinate) {
+        guard (0..<rowCount).contains(coordinate.row) else { return }
+        guard (0..<columnCount).contains(coordinate.col) else { return }
+        self[coordinate.row][coordinate.col] = element
     }
 }
 

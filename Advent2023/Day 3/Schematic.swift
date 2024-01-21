@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Coordinate
 
 extension String {
     public var symbolCharacters: String {

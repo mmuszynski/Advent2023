@@ -1,4 +1,6 @@
 import SwiftUI
+import Graph
+import Coordinate
 
 class ReflectorMapController: ObservableObject {
     convenience init(url: URL) {
@@ -133,4 +135,5 @@ class ReflectorMapController: ObservableObject {
         
         return outputPulses
     }
+    
 }

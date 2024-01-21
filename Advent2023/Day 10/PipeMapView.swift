@@ -7,6 +7,7 @@
 
 import SwiftUI
 import BundleURL
+import Coordinate
 
 extension Coordinate: Identifiable {
     public var id: String {

@@ -7,6 +7,7 @@
 
 import SwiftUI
 import BundleURL
+import Coordinate
 
 struct PipeShape: Shape {
     var segments: [Coordinate : CoordinateEdge]

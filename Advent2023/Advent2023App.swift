@@ -12,7 +12,7 @@ import BundleURL
 struct Advent2023App: App {
     var body: some Scene {
         WindowGroup {
-            Day12View()
+            GardenWalkView()
         }
     }
 }

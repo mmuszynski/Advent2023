@@ -8,6 +8,7 @@
 import XCTest
 @testable import Advent2023
 import BundleURL
+import Coordinate
 
 final class Day17: XCTestCase {
     
@@ -24,10 +25,13 @@ final class Day17: XCTestCase {
             line.enumerated().map(\.element).compactMap(String.init).compactMap(Int.init)
         }
         let controller = CrucibleGraphController(matrix: matrix)
-        let path = controller.graph.dijkstraWithDay17Restrictions(from: "0,0", to: "1,1")
-        print(path)
-        XCTAssertEqual(path.dropFirst().compactMap{ matrix.element(at: $0) }.sum, 3)
+        
+        let costs = controller.graph.dijkstraField(from: .zero)
+        XCTAssertEqual(costs.filter { element in
+            element.key.coordinate.x == 1 && element.key.coordinate.y == 1
+        }.map(\.value).min(), 3)
     }
+    
     
     func testLessSimple() throws {
         let string = """
@@ -40,9 +44,13 @@ final class Day17: XCTestCase {
             line.enumerated().map(\.element).compactMap(String.init).compactMap(Int.init)
         }
         let controller = CrucibleGraphController(matrix: matrix)
-        let path = controller.graph.dijkstraWithDay17Restrictions(from: "0,0", to: "2,2")
-        print(path)
-        XCTAssertEqual(path.dropFirst().compactMap{ matrix.element(at: $0) }.sum, 8)
+        
+        let costs = controller.graph.dijkstraField(from: .zero)
+        let rows = matrix.rowCount
+        let cols = matrix.columnCount
+        XCTAssertEqual(costs.filter { element in
+            element.key.coordinate.row == rows - 1 && element.key.coordinate.col == cols - 1
+        }.map(\.value).min(), 8)
     }
     
     func testLongerSimple() throws {
@@ -58,27 +66,12 @@ final class Day17: XCTestCase {
             line.enumerated().map(\.element).compactMap(String.init).compactMap(Int.init)
         }
         let controller = CrucibleGraphController(matrix: matrix)
-        let path = controller.graph.dijkstraWithDay17Restrictions(from: "0,0", to: "4,4")
-        print(path)
-        XCTAssertEqual(path.dropFirst().compactMap{ matrix.element(at: $0) }.sum, 13)
-    }
-    
-    func testEvenLongerSimple() throws {
-        let string = """
-                    5 4 5 5 5
-                    4 5 5 5 5
-                    5 5 5 5 5
-                    5 5 5 5 5
-                    5 5 5 5 5
-                    """
-        
-        let matrix = Matrix2D(string: string) { line in
-            line.enumerated().map(\.element).compactMap(String.init).compactMap(Int.init)
-        }
-        let controller = CrucibleGraphController(matrix: matrix)
-        let path = controller.graph.dijkstraWithDay17Restrictions(from: "0,0", to: "4,4")
-        print(path)
-        XCTAssertEqual(path.dropFirst().compactMap{ matrix.element(at: $0) }.sum, 5 * 8 - 1)
+        let costs = controller.graph.dijkstraField(from: .zero)
+        let rows = matrix.rowCount
+        let cols = matrix.columnCount
+        XCTAssertEqual(costs.filter { element in
+            element.key.coordinate.row == rows - 1 && element.key.coordinate.col == cols - 1
+        }.map(\.value).min(), 13)
     }
     
     func testDifficultPortionOfExample() {
@@ -92,33 +85,37 @@ final class Day17: XCTestCase {
             line.enumerated().map(\.element).compactMap(String.init).compactMap(Int.init)
         }
         
-        print(matrix)
-        
         let controller = CrucibleGraphController(matrix: matrix)
         
-        XCTAssertEqual(controller.graph.nodes.count, 9)
-        XCTAssertEqual(controller.graph.edges.count, 24)
-        XCTAssertEqual(controller.graph.nodes.map(\.row).max()!, 2)
-
+        let costs = controller.graph.dijkstraField(from: .zero)
+        let rows = matrix.rowCount
+        let cols = matrix.columnCount
+        XCTAssertEqual(costs.filter { element in
+            element.key.coordinate.row == rows - 1 && element.key.coordinate.col == cols - 1
+        }.map(\.value).min(), 18)
         
-        let path = controller.graph.dijkstraWithDay17Restrictions(from: "0,0", to: "2,2")
-        XCTAssertEqual(path.dropFirst().compactMap{ matrix.element(at: $0) }.sum, 18)
     }
     
     func testExample() throws {
         let string = try String(contentsOf: example)
-        var matrix = Matrix2D(string: string) { line in
+        let matrix = Matrix2D(string: string) { line in
             line.enumerated().map(\.element).compactMap(String.init).compactMap(Int.init)
         }
         
         let controller = CrucibleGraphController(matrix: matrix)
-        XCTAssertEqual(controller.graph.nodes.count, 13 * 13)
-        XCTAssertEqual(controller.graph.edges.count, 4 * 2 + 11 * 3 * 4 + 11 * 11 * 4)
         
-        let path = controller.graph.dijkstraWithDay17Restrictions(from: "0,0", to: "12,12")
-        XCTAssertEqual(path.dropFirst().compactMap{ matrix.element(at: $0) }.sum, 102)
-                
-        print(matrix)
+        let costs = controller.graph.dijkstraField(from: .zero)
+        let rows = matrix.rowCount
+        let cols = matrix.columnCount
+        
+        let finalCosts = costs.filter { element in
+            element.key.coordinate.row == rows - 1 && element.key.coordinate.col == cols - 1
+        }
+        
+        let path = controller.graph.dijkstra(from: "0,0", to: "12,12").map { $0.coordinate }
+        
+        XCTAssertEqual(finalCosts.map(\.value).min(), 102)
+        
         var description = "     " + (0..<matrix.columnCount).map { String(format: "[%2d]", $0) }.joined() + "\r"
         for (row, elements) in matrix.enumerated() {
             description.append(elements.enumerated().map {
@@ -134,43 +131,61 @@ final class Day17: XCTestCase {
             }.joined() + "\n")
         }
         print(description)
+    }
+    
+    func testInput() throws {
+        let string = try String(contentsOf: input)
+        let matrix = Matrix2D(string: string) { line in
+            line.enumerated().map(\.element).compactMap(String.init).compactMap(Int.init)
+        }
         
-        let exampleString =
-        """
-        2>>34^>>>1323
-        32v>>>35v5623
-        32552456v>>54
-        3446585845v52
-        4546657867v>6
-        14385987984v4
-        44578769877v6
-        36378779796v>
-        465496798688v
-        456467998645v
-        12246868655<v
-        25465488877v5
-        43226746555v>
-        """
-        let exampleMatrix = Matrix2D(string: exampleString) { line in
-            line.map(String.init)
+        let controller = CrucibleGraphController(matrix: matrix)
+        
+        let costs = controller.graph.dijkstraField(from: .zero)
+        let rows = matrix.rowCount
+        let cols = matrix.columnCount
+        
+        let finalCosts = costs.filter { element in
+            element.key.coordinate.row == rows - 1 && element.key.coordinate.col == cols - 1
         }
-        let examplePath = exampleMatrix.coordinates { string in
-            "v><^".contains(string)
+        
+        XCTAssertEqual(finalCosts.map(\.value).min(), 814)
+    }
+    
+    func testExamplePart2() throws {
+        let string = try String(contentsOf: example)
+        let matrix = Matrix2D(string: string) { line in
+            line.enumerated().map(\.element).compactMap(String.init).compactMap(Int.init)
         }
-        description = "     " + (0..<matrix.columnCount).map { String(format: "[%2d]", $0) }.joined() + "\r"
-        for (row, elements) in matrix.enumerated() {
-            description.append(elements.enumerated().map {
-                var string = $0.offset == 0 ? String(format: "[%2d] ", row) : ""
-                let coord = Coordinate(row: row, col: $0.offset)
-                if examplePath.contains(coord) {
-                    string += String(format: "(%2d)", $0.element).replacingOccurrences(of: "( ", with: " (")
-                } else {
-                    string += String(format: " %2d ", $0.element)
-                }
-                
-                return string
-            }.joined() + "\n")
+        
+        let controller = CrucibleGraphController(matrix: matrix, partOne: false)
+        let costs = controller.graph.dijkstraField(from: .zero)
+        let rows = matrix.rowCount
+        let cols = matrix.columnCount
+        
+        let finalCosts = costs.filter { element in
+            element.key.coordinate.row == rows - 1 && element.key.coordinate.col == cols - 1
         }
-        print(description)
+        
+        XCTAssertEqual(finalCosts.map(\.value).min(), 94)
+    }
+    
+    func testInputPart2() throws {
+        #warning("almost 30 seconds")
+        let string = try String(contentsOf: input)
+        let matrix = Matrix2D(string: string) { line in
+            line.enumerated().map(\.element).compactMap(String.init).compactMap(Int.init)
+        }
+        
+        let controller = CrucibleGraphController(matrix: matrix, partOne: false)
+        let costs = controller.graph.dijkstraField(from: .zero)
+        let rows = matrix.rowCount
+        let cols = matrix.columnCount
+        
+        let finalCosts = costs.filter { element in
+            element.key.coordinate.row == rows - 1 && element.key.coordinate.col == cols - 1
+        }
+        
+        XCTAssertEqual(finalCosts.map(\.value).min(), 974)
     }
 }

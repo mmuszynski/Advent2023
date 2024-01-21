@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Coordinate
 
 struct CoordinateEdge: OptionSet {
     typealias RawValue = Int

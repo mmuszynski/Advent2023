@@ -94,16 +94,4 @@ final class Day8: XCTestCase {
         XCTAssertEqual(LCM(6, 4), 12)
     }
     
-    func LCM(_ a: Int, _ b: Int) -> Int {
-        abs(a * b) / GCD(a, b)
-    }
-    
-    func GCD(_ a: Int, _ b: Int) -> Int {
-        if a == 0 { return b }
-        if b == 0 { return a }
-        
-        //A = B * Q + R
-        return GCD(b, a % b)
-    }
-    
 }

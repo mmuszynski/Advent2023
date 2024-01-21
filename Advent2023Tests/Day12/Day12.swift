@@ -92,6 +92,7 @@ final class Day12: XCTestCase {
     }
     
     func testExpandedInputDay12() throws {
+        #warning("This test takes 20+ seconds")
         let string = try String(contentsOf: input).separatedByLine
         
         let maps = string

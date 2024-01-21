@@ -8,6 +8,7 @@
 import XCTest
 import BundleURL
 @testable import Advent2023
+import Coordinate
 
 final class Day10: XCTestCase {
     

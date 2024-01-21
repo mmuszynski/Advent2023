@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Coordinate
 
 struct GalacticMap {
     enum GalacticContent: CustomDebugStringConvertible {

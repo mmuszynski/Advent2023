@@ -1,4 +1,5 @@
 import Foundation
+import Coordinate
 
 enum ReflectorType: Character {
     case empty = "."
