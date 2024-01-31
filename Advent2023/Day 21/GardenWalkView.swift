@@ -14,61 +14,65 @@ struct GardenWalkView: View {
     @Environment(\.undoManager) var undoManager
 
     var body: some View {
-        NavigationSplitView(sidebar: {
+        TabView {
             VStack {
-                List(controller.hashes.elements, id: \.self) { hash in
-                    Text("\(hash)")
-                        .foregroundStyle(controller.hashes.loopedElements.contains(hash) ? .red : .primary)
+                ZStack {
+                    ProgressView()
+                        .opacity(controller.isWorking ? 1 : 0)
+                    GridVisualizerView(rows: controller.matrix.rowCount, cols: controller.matrix.columnCount, displayElements: $controller.elements)
+                        .aspectRatio(contentMode: .fit)
+                        .padding()
+                        .focusable()
+                        .onKeyPress { press in
+                            return controller.resolve(press)
+                        }
+                        .opacity(controller.isWorking ? 0 : 1)
                 }
-                Text("\(controller.hashes.uniqueLength) \(controller.hashes.cycleLength)")
-                Text("\(controller.activeLocations.count) active")
-            }
-        }, detail: {
-            VStack {
-                GridVisualizerView(rows: controller.matrix.rowCount, cols: controller.matrix.columnCount, displayElements: $controller.elements)
-                    .aspectRatio(contentMode: .fit)
-                    .padding()
-                    .focusable()
-                    .onKeyPress { press in
-                        return controller.resolve(press)
-                    }
+                
                 Text("\(controller.elementHash)")
-                VStack {
-                    HStack {
-                        Button(action: controller.undoManager.undo) {
-                            Text("Step Back")
-                        }
-                        .disabled(!controller.undoManager.canUndo)
-                        .keyboardShortcut(.leftArrow, modifiers: .command)
-                        Button(action: { controller.step() }) {
-                            Text("Step Forward")
-                        }
-                        .keyboardShortcut(.rightArrow, modifiers: .command)
-                    }
-                    
-                    HStack {
-                        Button(action: controller.runUntilCycle) {
-                            Text("Find Cycle")
-                        }
-                        .disabled(controller.hashes.cycleLength > 0)
-                        Button(action: controller.reset) {
-                            Text("Reset")
-                        }
-                    }
-                    HStack {
-                        TextField("Times", value: $controller.stepAdvanceNumber, formatter: NumberFormatter())
-                        Button(action: { controller.step(controller.stepAdvanceNumber)}) {
-                            Text("Step ahead \(controller.stepAdvanceNumber)")
-                        }
-                        
-                    }
-                }
+                WalkControls(controller: controller)
             }
             .padding()
-        })
-        .onAppear(perform: {
-            self.controller.undoManager = self.undoManager!
-        })
+            .onAppear(perform: {
+                self.controller.undoManager = self.undoManager!
+            })
+        }
+    }
+}
+
+struct WalkControls: View {
+    @State var controller: GardenWalkController
+    var body: some View {
+        VStack {
+            HStack {
+                Button(action: controller.undoManager.undo) {
+                    Text("Step Back")
+                }
+                .disabled(!controller.undoManager.canUndo)
+                .keyboardShortcut(.leftArrow, modifiers: .command)
+                Button(action: { controller.step() }) {
+                    Text("Step Forward")
+                }
+                .keyboardShortcut(.rightArrow, modifiers: .command)
+            }
+            
+            HStack {
+                Button(action: controller.runUntilCycle) {
+                    Text("Find Cycle")
+                }
+                .disabled(controller.hashes.cycleLength > 0)
+                Button(action: controller.reset) {
+                    Text("Reset")
+                }
+            }
+            HStack {
+                TextField("Times", value: $controller.stepAdvanceNumber, formatter: NumberFormatter())
+                Button(action: { controller.step(controller.stepAdvanceNumber)}) {
+                    Text("Step ahead \(controller.stepAdvanceNumber)")
+                }
+                
+            }
+        }
     }
 }
 

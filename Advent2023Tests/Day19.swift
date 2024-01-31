@@ -10,16 +10,6 @@ import XCTest
 import BundleURL
 import Graph
 
-extension Array where Element == Bool {
-    var any: Bool {
-        self.reduce(false) { $0 || $1 }
-    }
-    
-    var all: Bool {
-        self.reduce(false) { $0 && $1 }
-    }
-}
-
 final class Day19: XCTestCase {
     
     let input = #bundleURL("inputDay19")!

@@ -7,7 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		271E188F2B5DC7600079142B /* inputDay22 in Resources */ = {isa = PBXBuildFile; fileRef = 271E188E2B5DC7600079142B /* inputDay22 */; };
+		27077DF22B6433FB00BBF87A /* SandBrickController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27077DF12B6433FB00BBF87A /* SandBrickController.swift */; };
+		27077DF42B656DB300BBF87A /* inputDay22 in Resources */ = {isa = PBXBuildFile; fileRef = 27077DF32B656DB300BBF87A /* inputDay22 */; };
+		27077DF62B65912900BBF87A /* SandBrick.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27077DF52B65912900BBF87A /* SandBrick.swift */; };
+		271E188F2B5DC7600079142B /* exampleDay22 in Resources */ = {isa = PBXBuildFile; fileRef = 271E188E2B5DC7600079142B /* exampleDay22 */; };
 		272FD5B52B3E5FA5000ED81F /* Reflector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 272FD5B32B3E5FA5000ED81F /* Reflector.swift */; };
 		272FD5B62B3E5FA5000ED81F /* LightPulse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 272FD5B42B3E5FA5000ED81F /* LightPulse.swift */; };
 		272FD5B82B3E5FBD000ED81F /* ReflectorMapController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 272FD5B72B3E5FBD000ED81F /* ReflectorMapController.swift */; };
@@ -45,6 +48,9 @@
 		274FA3762B292EA700CBE0F0 /* Matrix2D.swift in Sources */ = {isa = PBXBuildFile; fileRef = 274FA3752B292EA700CBE0F0 /* Matrix2D.swift */; };
 		274FA3782B2942ED00CBE0F0 /* PipeSegmentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 274FA3772B2942ED00CBE0F0 /* PipeSegmentView.swift */; };
 		274FA37A2B2946D000CBE0F0 /* PipeMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 274FA3792B2946D000CBE0F0 /* PipeMapView.swift */; };
+		275166942B5E245900E17A6C /* BrickField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 275166932B5E245900E17A6C /* BrickField.swift */; };
+		275166962B5EC66600E17A6C /* Day22.swift in Sources */ = {isa = PBXBuildFile; fileRef = 275166952B5EC66600E17A6C /* Day22.swift */; };
+		275166982B605BC900E17A6C /* AllSatisfyTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 275166972B605BC900E17A6C /* AllSatisfyTest.swift */; };
 		2764973E2B5486EC00B2EC51 /* inputDay20 in Resources */ = {isa = PBXBuildFile; fileRef = 2764973D2B5486EC00B2EC51 /* inputDay20 */; };
 		276497402B5486F600B2EC51 /* exampleDay20 in Resources */ = {isa = PBXBuildFile; fileRef = 2764973F2B5486F600B2EC51 /* exampleDay20 */; };
 		276497422B54870200B2EC51 /* PulseModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 276497412B54870200B2EC51 /* PulseModule.swift */; };
@@ -69,6 +75,7 @@
 		2772854B2B222D9100700551 /* inputDay5 in Resources */ = {isa = PBXBuildFile; fileRef = 278F51922B221CA200EE69B6 /* inputDay5 */; };
 		277772362B275FCF006702BA /* exampleDay9 in Resources */ = {isa = PBXBuildFile; fileRef = 277772312B275FCF006702BA /* exampleDay9 */; };
 		277772372B275FCF006702BA /* inputDay9 in Resources */ = {isa = PBXBuildFile; fileRef = 277772322B275FCF006702BA /* inputDay9 */; };
+		278448D12B63DDBD00E6D7E7 /* SandFieldVisualizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 278448D02B63DDBD00E6D7E7 /* SandFieldVisualizer.swift */; };
 		2787A5352B2CD2C40003180B /* SpringMapCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2787A5342B2CD2C40003180B /* SpringMapCalculator.swift */; };
 		2787A5372B2CD8AC0003180B /* Day12View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2787A5362B2CD8AC0003180B /* Day12View.swift */; };
 		2787A53F2B2DE7090003180B /* Day13.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2787A53E2B2DE7090003180B /* Day13.swift */; };
@@ -138,7 +145,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		271E188E2B5DC7600079142B /* inputDay22 */ = {isa = PBXFileReference; lastKnownFileType = text; path = inputDay22; sourceTree = "<group>"; };
+		27077DF12B6433FB00BBF87A /* SandBrickController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SandBrickController.swift; sourceTree = "<group>"; };
+		27077DF32B656DB300BBF87A /* inputDay22 */ = {isa = PBXFileReference; lastKnownFileType = text; path = inputDay22; sourceTree = "<group>"; };
+		27077DF52B65912900BBF87A /* SandBrick.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SandBrick.swift; sourceTree = "<group>"; };
+		271E188E2B5DC7600079142B /* exampleDay22 */ = {isa = PBXFileReference; lastKnownFileType = text; path = exampleDay22; sourceTree = "<group>"; };
 		272FD5B32B3E5FA5000ED81F /* Reflector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reflector.swift; sourceTree = "<group>"; };
 		272FD5B42B3E5FA5000ED81F /* LightPulse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LightPulse.swift; sourceTree = "<group>"; };
 		272FD5B72B3E5FBD000ED81F /* ReflectorMapController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReflectorMapController.swift; sourceTree = "<group>"; };
@@ -173,6 +183,9 @@
 		274FA3752B292EA700CBE0F0 /* Matrix2D.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Matrix2D.swift; sourceTree = "<group>"; };
 		274FA3772B2942ED00CBE0F0 /* PipeSegmentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PipeSegmentView.swift; sourceTree = "<group>"; };
 		274FA3792B2946D000CBE0F0 /* PipeMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PipeMapView.swift; sourceTree = "<group>"; };
+		275166932B5E245900E17A6C /* BrickField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrickField.swift; sourceTree = "<group>"; };
+		275166952B5EC66600E17A6C /* Day22.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day22.swift; sourceTree = "<group>"; };
+		275166972B605BC900E17A6C /* AllSatisfyTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllSatisfyTest.swift; sourceTree = "<group>"; };
 		2764973D2B5486EC00B2EC51 /* inputDay20 */ = {isa = PBXFileReference; lastKnownFileType = text; path = inputDay20; sourceTree = "<group>"; };
 		2764973F2B5486F600B2EC51 /* exampleDay20 */ = {isa = PBXFileReference; lastKnownFileType = text; path = exampleDay20; sourceTree = "<group>"; };
 		276497412B54870200B2EC51 /* PulseModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PulseModule.swift; sourceTree = "<group>"; };
@@ -196,6 +209,7 @@
 		276DA2CB2B44C6EA008921CF /* HeapTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeapTests.swift; sourceTree = "<group>"; };
 		277772312B275FCF006702BA /* exampleDay9 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = exampleDay9; sourceTree = "<group>"; };
 		277772322B275FCF006702BA /* inputDay9 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = inputDay9; sourceTree = "<group>"; };
+		278448D02B63DDBD00E6D7E7 /* SandFieldVisualizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SandFieldVisualizer.swift; sourceTree = "<group>"; };
 		2787A5342B2CD2C40003180B /* SpringMapCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpringMapCalculator.swift; sourceTree = "<group>"; };
 		2787A5362B2CD8AC0003180B /* Day12View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day12View.swift; sourceTree = "<group>"; };
 		2787A53E2B2DE7090003180B /* Day13.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Day13.swift; path = Advent2023Tests/Day13.swift; sourceTree = SOURCE_ROOT; };
@@ -283,7 +297,12 @@
 		271E188D2B5DC7490079142B /* Day 22 */ = {
 			isa = PBXGroup;
 			children = (
-				271E188E2B5DC7600079142B /* inputDay22 */,
+				271E188E2B5DC7600079142B /* exampleDay22 */,
+				27077DF32B656DB300BBF87A /* inputDay22 */,
+				27077DF52B65912900BBF87A /* SandBrick.swift */,
+				275166932B5E245900E17A6C /* BrickField.swift */,
+				27077DF12B6433FB00BBF87A /* SandBrickController.swift */,
+				278448D02B63DDBD00E6D7E7 /* SandFieldVisualizer.swift */,
 			);
 			path = "Day 22";
 			sourceTree = "<group>";
@@ -609,6 +628,7 @@
 			isa = PBXGroup;
 			children = (
 				276703212B29FCAA0023B1AF /* MatrixTests.swift */,
+				275166972B605BC900E17A6C /* AllSatisfyTest.swift */,
 				27A59B3E2B5C68D500EF33BF /* CyclicalArrayTests.swift */,
 				276DA2CB2B44C6EA008921CF /* HeapTests.swift */,
 				27EE90632B1E3E26001053A0 /* Days3-4.swift */,
@@ -630,6 +650,7 @@
 				27D0D5972B4C81AB00922313 /* Day19.swift */,
 				276497432B54943400B2EC51 /* Day20.swift */,
 				276497502B55B60100B2EC51 /* Day21.swift */,
+				275166952B5EC66600E17A6C /* Day22.swift */,
 			);
 			path = Advent2023Tests;
 			sourceTree = "<group>";
@@ -696,7 +717,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1500;
-				LastUpgradeCheck = 1500;
+				LastUpgradeCheck = 1510;
 				TargetAttributes = {
 					27EE904D2B1E3E25001053A0 = {
 						CreatedOnToolsVersion = 15.0.1;
@@ -743,6 +764,7 @@
 				27EE90812B1E3E6E001053A0 /* inputDay3 in Resources */,
 				274FA3652B28AD8D00CBE0F0 /* exampleDay10 in Resources */,
 				2746B03D2B2614D700C5A615 /* exampleDay7 in Resources */,
+				27077DF42B656DB300BBF87A /* inputDay22 in Resources */,
 				274FA36D2B28CEE200CBE0F0 /* complexExample10 in Resources */,
 				2746B03E2B2614D700C5A615 /* inputDay7 in Resources */,
 				27EE907F2B1E3E5A001053A0 /* exampleDay3 in Resources */,
@@ -755,7 +777,7 @@
 				27EE90592B1E3E26001053A0 /* Preview Assets.xcassets in Resources */,
 				27D0D5932B4C7A5100922313 /* exampleDay19 in Resources */,
 				2787A5482B2FD05E0003180B /* exampleDay14 in Resources */,
-				271E188F2B5DC7600079142B /* inputDay22 in Resources */,
+				271E188F2B5DC7600079142B /* exampleDay22 in Resources */,
 				276497402B5486F600B2EC51 /* exampleDay20 in Resources */,
 				27B3619F2B32372E00A0B4EC /* inputDay16 in Resources */,
 				2772854B2B222D9100700551 /* inputDay5 in Resources */,
@@ -803,6 +825,7 @@
 				2746B0332B2579F900C5A615 /* Quadratic.swift in Sources */,
 				2787A5352B2CD2C40003180B /* SpringMapCalculator.swift in Sources */,
 				27EE90542B1E3E25001053A0 /* ContentView.swift in Sources */,
+				27077DF62B65912900BBF87A /* SandBrick.swift in Sources */,
 				27E603BE2B20FBD800C4CEC3 /* Helpers.swift in Sources */,
 				278F51942B221CBE00EE69B6 /* GardenRange.swift in Sources */,
 				2746B0442B26163300C5A615 /* CamelCardsHand.swift in Sources */,
@@ -814,6 +837,8 @@
 				274FA3672B28AE3E00CBE0F0 /* PipeSegment.swift in Sources */,
 				27F5AD952B227D8A003AFB30 /* RangeComparisons.swift in Sources */,
 				272FD5B62B3E5FA5000ED81F /* LightPulse.swift in Sources */,
+				278448D12B63DDBD00E6D7E7 /* SandFieldVisualizer.swift in Sources */,
+				275166942B5E245900E17A6C /* BrickField.swift in Sources */,
 				278F51992B22217000EE69B6 /* Almanac.swift in Sources */,
 				27EE90522B1E3E25001053A0 /* Advent2023App.swift in Sources */,
 				27DDD8952B55F91D00B134E4 /* MatrixPrint.swift in Sources */,
@@ -825,6 +850,7 @@
 				27C6176A2B4D867C006F378E /* Day19RangedElement.swift in Sources */,
 				274FA3762B292EA700CBE0F0 /* Matrix2D.swift in Sources */,
 				27E603BC2B20F42C00C4CEC3 /* ScratchCard.swift in Sources */,
+				27077DF22B6433FB00BBF87A /* SandBrickController.swift in Sources */,
 				27FC23E62B5336C600A74647 /* ReflectorGraph.swift in Sources */,
 				27D0D58D2B4AF95A00922313 /* DiggerInstruction.swift in Sources */,
 				276703272B2A071B0023B1AF /* MatrixInit.swift in Sources */,
@@ -866,8 +892,10 @@
 				276DA2CC2B44C6EA008921CF /* HeapTests.swift in Sources */,
 				27D0D58F2B4B0B3000922313 /* Day18.swift in Sources */,
 				274FA36B2B28BA8E00CBE0F0 /* Day10.swift in Sources */,
+				275166982B605BC900E17A6C /* AllSatisfyTest.swift in Sources */,
 				27F725702B48E81900DD659F /* Day17.swift in Sources */,
 				2746B0302B24A4FA00C5A615 /* GardenRangeTests.swift in Sources */,
+				275166962B5EC66600E17A6C /* Day22.swift in Sources */,
 				27EE90642B1E3E26001053A0 /* Days3-4.swift in Sources */,
 				2787A5562B312D080003180B /* Day15.swift in Sources */,
 				27F65ED32B40941100FAD81C /* Day 8 Graph Tests.swift in Sources */,
@@ -923,6 +951,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -962,6 +991,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"Advent2023/Preview Content\"";
 				DEVELOPMENT_TEAM = DF288G8ZJ6;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -987,6 +1017,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = DF288G8ZJ6;
 				GENERATE_INFOPLIST_FILE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 14.0;
@@ -1033,6 +1064,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -1096,6 +1128,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -1127,6 +1160,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"Advent2023/Preview Content\"";
 				DEVELOPMENT_TEAM = DF288G8ZJ6;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -1155,6 +1189,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"Advent2023/Preview Content\"";
 				DEVELOPMENT_TEAM = DF288G8ZJ6;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -1180,6 +1215,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = DF288G8ZJ6;
 				GENERATE_INFOPLIST_FILE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 14.0;
@@ -1199,6 +1235,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = DF288G8ZJ6;
 				GENERATE_INFOPLIST_FILE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 14.0;

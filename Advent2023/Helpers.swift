@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SwiftUI
 
 extension String {
     var separatedByLine: [String] {
@@ -36,4 +37,20 @@ func GCD(_ a: Int, _ b: Int) -> Int {
     
     //A = B * Q + R
     return GCD(b, a % b)
+}
+
+extension Array where Element == Bool {
+    var any: Bool {
+        self.reduce(false) { $0 || $1 }
+    }
+    
+    var all: Bool {
+        self.reduce(true) { $0 && $1 }
+    }
+}
+
+extension Color {
+    static var random: Color {
+        Color(hue: .random(in: 0...1), saturation: .random(in: 0...1), brightness: .random(in: 0...1))
+    }
 }

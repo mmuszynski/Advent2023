@@ -56,14 +56,27 @@ class GardenWalkController {
     init(string: String) {
         graph = DirectionalGraph()
         matrix = Matrix2D(string: string) { $0.enumerated().map(\.element) }
-        self.reset()
+    
+        Task {
+            self.isWorking = true
+            await setupGraph()
+            self.reset()
+            self.isWorking = false
+        }
     }
     
+    var isWorking: Bool = false
+    
     func reset() {
-        self.rocks.removeAll()
         self.hashes = CyclicalArray()
         self.activeLocations.removeAll()
-        
+        if let initialLocation { self.activeLocations.insert(initialLocation) }
+        self.setElements()
+    }
+    
+    var initialLocation: Coordinate?
+    
+    func setupGraph() async {
         for row in 0..<matrix.rowCount {
             for col in 0..<matrix.columnCount {
                 let coordinate = Coordinate(row: row, col: col)
@@ -82,13 +95,15 @@ class GardenWalkController {
 
                     graph.addEdge(from: coordinate, to: neighbor)
                     if neighborElement == "S" {
-                        activeLocations.insert(neighbor)
+                        initialLocation = neighbor
                     }
                 }
             }
         }
         
-        setElements()
+        await MainActor.run {
+            setElements()
+        }
     }
     
     func setElements() {
